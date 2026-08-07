@@ -1,0 +1,14 @@
+<div class="competence">
+    <h3 class="caption">{{title}}</h3>
+
+    <ul>
+        {{#each list}}
+            <li>
+                <div class="name">{{name}}</div>
+                <div class="indicator">
+                    <div class="level level-{{level}}"></div>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>

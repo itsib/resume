@@ -1,0 +1,127 @@
+{
+  "header": {
+    "name": "Sergey Kraynov",
+    "title": "Tech Lead, Senior Frontend Developer",
+    "location": "Russian Federation, Krasnoyarsk",
+    "contacts": [
+      { "icon": "phone", "value": "+7(999)317-22-33", "href": "tel:+79993172233" },
+      { "icon": "email", "value": "itsib.su@gmail.com", "href":  "mailto:itsib.su@gmail.com" },
+      { "icon": "telegram", "value": "@sergeyitsib", "href":  "https://t.me/sergeyitsib" }
+    ]
+  },
+  "links": [
+    {
+      "icon": "linkedin",
+      "label": "Linkedin",
+      "href": "https://linkedin.com/in/itsib"
+    },
+    {
+      "icon": "github",
+      "label": "GitHub",
+      "href": "https://github.com/itsib"
+    },
+    {
+      "icon": "gitlab",
+      "label": "GitLab",
+      "href": "https://gitlab.com/sergeyitsib"
+    },
+    {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com/sergeyitsib"
+    },
+    {
+      "icon": "habr",
+      "label": "Habr",
+      "href": "https://career.habr.com/sergeyitsib"
+    },
+    {
+      "icon": "google",
+      "label": "Google Dev",
+      "href": "https://g.dev/itsib"
+    }
+  ],
+  "experience": [
+    {
+      "name": "Solves.pro",
+      "spec": "Frontend Developer",
+      "period": "Май 2025 - Май 2026",
+      "description": "В мои обязанности входило доработка уже существующих проектов, добавление нового функционала, оптимизация работы приложений и интернет магазинов и порталов разных компаний-клиентов.\nВсего за год работы в этой компании, я смог в деталях на очень низком уровне разобраться с nuxt и vue, и в тонкостях работы SSR и оптимизации рендеринга страниц. Что позволило в одном из проектом уменьшить время первой загрузки больше чем на 20%, за счет оптимизации и кэширования запросов. \nЕще одним достижением стало изучение нового, для меня языка программирования kotlin, в процессе разработки нативного приложения для часов на WearOS, и последующая интеграция с уже существующим мобильным приложении для android.\n",
+      "stack": ["Nuxt", "Vue", "Vite", "GraphQL", "React Admin", "React", "PWA", "GraphQL", "TypeScript", "Rollup", "GitLab Pipelines", "GitHub Pipelines", "Prettier", "ESLint", "Stylelint"]
+    },
+    {
+      "name": "Plasma Pay",
+      "spec": "Frontend Developer, Tech Lead Frontend",
+      "period": "Май 2017 – Май 2025",
+      "description": "В мои обязанности входило курировать frontend разработку, код-ревью, собеседования для приема в команду, и конечно же писать код, много кода. Требовалось находить решения таким задачам, которые, даже в похожем виде нигде не были реализованы. Требовалось в короткие сроки интегрироваться с решениями, написанными на новых для меня, и незнакомых языках программирования. Это позволило ознакомится с достаточно широкими познаниями в подходах к программированию, и разными архитектурами приложений. \nОсобой фичей проекта была полная децентрализация. Статистика из разных блокчейнов собиралась с помощью сабрафов, также использовались, открытые API. Весь код фронтенда деплоился на ipfs. \n",
+      "stack": ["Angular", "React/Redux", "PWA", "GraphQL", "WebAssembly", "TypeScript", "NX", "NestJS", "Prisma", "Solidity", "EVM", "Bitcoin", "Vite", "Rollup", "GitLab Pipelines", "GitHub Pipelines", "Prettier", "ESLint", "Stylelint", "ls-lint"]
+    },
+    {
+      "name": "Swaaed, Los Angeles",
+      "spec": "Frontend Developer",
+      "period": "Июль 2016 - Май 2017",
+      "description": "Разработка решении связанных с автоматической публикацией разного рода постов в соц сетях. Интеграция c ИИ Watson от IBM, для определения целевой аудитории, настроений, платежеспособности, разного рода групп людей в соц сети Twitter и Facebook, по их постам и фотографиям. На выходе мы получали довольно точную информацию о том, кому будет интересен конкретный продукт, например спортивная одежда.",
+      "stack": ["Angular", "RxJS", "NodeJS", "Express", "TypeScript", "MongoDB", "Bootstrap", "SASS", "AWS", "S3", "WebPack", "TSLint"]
+    },
+    {
+      "name": "1 Бит, Красноярск",
+      "spec": "Full-stack developer",
+      "period": "Февраль 2015 – Август 2016",
+      "description": "Я занимался отдельным стартап проектом, не входящим в основное направление деятельности компании. Но проект был направлен как раз на дальнейшую интеграцию в рабочий процесс всей компании. Решение представляло из себя систему управления задачами, как для конкретного человека, так и для команды. Лично мой вклад это интегрирование архитектуры MVC в проект, в реализации нового на тот момент фреймворка Yii2. Что позволило больше не тратить время на стандартные задачи вроде валидаций данных или запросов к БД. Использование вместо SQL запросов, Active Record, значительно упростило использование БД, да и в целом внедрение фреймворка уменьшило количество написанного кода проекта.",
+      "stack": ["JavaScript", "CSS", "Yii-2", "PHP5", "PHP7", "NodeJS", "MySQL", "PostgreSQL", "WebPack"]
+    },
+    {
+      "name": "ТД Вальди, Красноярск",
+      "spec": "Full-stack developer",
+      "period": "Январь 2014 – Февраль 2015",
+      "description": "В обязанности входило доработка и обслуживание самого сайта компании и внутренней клиент-серверной инфраструктуры. Компания занимается гос. закупками и тендерами по 44 и 223 фз. В связи со спецификой работы были достаточно высокие требования к безопасности. Требовалось консультировать персонал, распределять права доступа, к разным точкам сети. И дорабатывать уже работающий интернет магазин по продаже мебели.",
+      "stack": ["PHP5", "Yii-2", "NodeJS", "MSSQL", "Active Directory Windows", "Shell", "Bash"]
+    }
+  ],
+  "competence": {
+    "lang": {
+      "title": "Programming Languages",
+      "list": [
+        { "name": "TypeScript",  "level": 5 },
+        { "name": "JavaScript",  "level": 5 },
+        { "name": "Web Assembly", "level": 5 },
+        { "name": "Golang", "level": 3 },
+        { "name": "Python", "level": 4 },
+        { "name": "Kotlin", "level": 4 },
+        { "name": "Java", "level": 4 },
+        { "name": "Solidity", "level": 3 },
+        { "name": "C++", "level": 3 },
+        { "name": "Bash", "level": 4 }
+      ]
+    },
+    "tech": {
+      "title": "Frameworks & Libraries",
+      "list": [
+        { "name": "React", "level": 5 },
+        { "name": "Vue", "level": 5 },
+        { "name": "Angular", "level": 5 },
+        { "name": "Lit", "level": 5 },
+        { "name": "TanStack", "level": 5 },
+        { "name": "Tailwind", "level": 5 },
+        { "name": "Bootstrap", "level": 5 },
+        { "name": "Material UI", "level": 5 },
+        { "name": "Radix UI", "level": 4 },
+        { "name": "Shadcn", "level": 5 },
+        { "name": "Express", "level": 5 }
+      ]
+    },
+    "devops": {
+      "title": "Software Construction",
+      "list": [
+        { "name": "Docker", "level": 5 },
+        { "name": "Kubernetes", "level": 2 },
+        { "name": "Vite", "level": 5 },
+        { "name": "Webpack", "level": 5 },
+        { "name": "Rollup", "level": 5 },
+        { "name": "Vitest", "level": 5 },
+        { "name": "Jest", "level": 5 },
+        { "name": "Cypress", "level": 2 }
+      ]
+    }
+  }
+}

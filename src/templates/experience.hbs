@@ -1,0 +1,34 @@
+<div id="experience">
+    <h1 class="section-title">
+        Опыт Работы, 10+ лет.
+    </h1>
+
+    <ul>
+        {{#each experience}}
+            <li>
+                <div class="marker">
+                    <i class="icon icon-briefcase text-white"></i>
+                </div>
+                <hgroup class="label">
+                    <h2>{{name}} - <i>{{spec}}</i></h2>
+                </hgroup>
+
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="article">
+                    <p class="period">{{period}}</p>
+                    <p class="description">{{description}}</p>
+
+                    <p class="stack">
+                    <span>Stack:</span>
+                    {{#each stack}}
+                        <span class="chip">{{this}}</span>
+                    {{/each}}
+                    </p>
+                </div>
+            </li>
+
+        {{/each}}
+    </ul>
+</div>

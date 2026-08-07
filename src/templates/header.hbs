@@ -1,0 +1,29 @@
+<header id="header">
+    <div class="stripe"></div>
+    <div class="container">
+        <div class="photo">
+            <img src="/images/photo.webp" alt="My Photo" width="120" height="120">
+        </div>
+        <div class="info">
+            <div class="name">{{header.name}}</div>
+            <div class="subscription">{{header.title}}</div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="contacts">
+            <li>
+                <i class="icon icon-marker"></i>
+                {{header.location}}
+            </li>
+
+            {{#each header.contacts}}
+                <li>
+                    <a href="{{href}}" target="_blank" rel="noreferrer">
+                        <i class="icon icon-{{icon}}"></i>
+                        {{value}}
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</header>

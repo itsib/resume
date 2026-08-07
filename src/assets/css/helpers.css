@@ -1,0 +1,28 @@
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-white {
+  color: var(--color-text-white);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+hr.vertical {
+  width: 1px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border-color: transparent;
+  border-left: 1px solid var(--color-border);
+}
