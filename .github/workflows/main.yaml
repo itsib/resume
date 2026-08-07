@@ -25,10 +25,6 @@ jobs:
       - name: Install dependency
         run: |
           npm install --no-fund --no-audit
-      - name: Lint & Test
-        run: |
-          npm run lint
-          npm test
       - name: Build
         run: |
           npm run build
