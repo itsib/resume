@@ -6,7 +6,8 @@
   "scripts": {
     "start": "icon-font g && vite",
     "build": "icon-font g && tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "@itsib/icon-font": "^0.4.14",

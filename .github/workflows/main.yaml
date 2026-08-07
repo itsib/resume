@@ -20,7 +20,7 @@ jobs:
       - name: Setup .npmrc file
         uses: actions/setup-node@v4
         with:
-          node-version: 20.17.0
+          node-version: 24.18.1
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependency
         run: |
@@ -40,8 +40,8 @@ jobs:
         id: upload-artifact-step
         with:
           compression-level: '0'
-          name: headscale-web-${{ github.ref_name }}.tgz
-          path: headscale-web-*.tgz
+          name: resume-${{ github.ref_name }}.tgz
+          path: resume-*.tgz
 
   release:
     runs-on: ubuntu-latest
@@ -52,13 +52,13 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: headscale-web-${{ github.ref_name }}.tgz
+          name: resume-${{ github.ref_name }}.tgz
           path: ${{ github.workspace }}
       - name: Release
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: '**/headscale*.tgz'
+          artifacts: '**/resume.tgz'
           artifactErrorsFailBuild: true
           name: 'Release ${{ github.ref_name }}'
 
@@ -76,7 +76,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            sergeyitsib/headscale-web
+            sergeyitsib/resume
           tags: |
             type=ref,event=branch
             type=ref,event=pr
