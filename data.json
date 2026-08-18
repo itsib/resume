@@ -9,7 +9,6 @@
     { "icon": "email", "value": "itsib.su@gmail.com", "href":  "mailto:itsib.su@gmail.com" },
     { "icon": "telegram", "value": "@sergeyitsib", "href":  "https://t.me/sergeyitsib" }
   ],
-  "summary": "I have been working as a frontend developer for over 10 years. For me, it’s not just about knowing frameworks, libraries, and UI kits. Although I have experience in commercial development with most of them.\nFor me, frontend is primarily about creating a beautiful, intuitive, responsive, user‑friendly, and accessible interface for all users. Which is then implemented using the technology suitable for the specific task, be it a web, mobile, or desktop application. Throughout the entire period of my practice, I honed my skills, and if it was necessary to study related topics that did not pertain to the development of science, I did so. Namely, Theory of Colours, Designing Calm UX Principles.",
   "links": [
     {
       "icon": "linkedin",
@@ -43,44 +42,48 @@
     }
   ],
   "experience": {
-    "title": "Опыт Работы, 10+ лет.",
+    "title": "Work experience, 10+ years.",
     "jobs": [
       {
         "name": "Solves.pro",
         "spec": "Frontend Developer",
-        "period": "Май 2025 - Май 2026",
-        "description": "В мои обязанности входило доработка уже существующих проектов, добавление нового функционала, оптимизация работы приложений и интернет магазинов и порталов разных компаний-клиентов. Всего за год работы в этой компании, я смог в деталях на очень низком уровне разобраться с nuxt и vue, и в тонкостях работы SSR и оптимизации рендеринга страниц. Что позволило в одном из проектом уменьшить время первой загрузки больше чем на 20%, за счет оптимизации и кэширования запросов.  Еще одним достижением стало изучение нового, для меня языка программирования kotlin, в процессе разработки нативного приложения для часов на WearOS, и последующая интеграция с уже существующим мобильным приложении для android. ",
+        "period": "May 2025 – May 2026",
+        "description": "My responsibilities included refining existing projects, adding new functionality, and optimizing the performance of applications, online stores, and portals for various client companies. In just one year of working at this company, I was able to gain a detailed understanding of nuxt and vue at a very basic level, as well as the intricacies of SSR operation and page rendering optimization. This allowed me to reduce the first‑load time in one of the projects by more than 20%, thanks to optimization and query caching. Another achievement was learning Kotlin, a new programming language for me, while developing a native app for watches on WearOS, and then integrating it with the existing mobile app for Android.",
         "stack": ["Nuxt", "Vue", "Vite", "GraphQL", "React Admin", "React", "PWA", "GraphQL", "TypeScript", "Rollup", "GitLab Pipelines", "GitHub Pipelines", "Prettier", "ESLint", "Stylelint"]
       },
       {
         "name": "Plasma Pay",
         "spec": "Frontend Developer, Tech Lead Frontend",
-        "period": "Май 2017 – Май 2025",
-        "description": "В мои обязанности входило курировать frontend разработку, код-ревью, собеседования для приема в команду, и конечно же писать код, много кода. Требовалось находить решения таким задачам, которые, даже в похожем виде нигде не были реализованы. Требовалось в короткие сроки интегрироваться с решениями, написанными на новых для меня, и незнакомых языках программирования. Это позволило ознакомится с достаточно широкими познаниями в подходах к программированию, и разными архитектурами приложений.  Особой фичей проекта была полная децентрализация. Статистика из разных блокчейнов собиралась с помощью сабрафов, также использовались, открытые API. Весь код фронтенда деплоился на ipfs.  ",
+        "period": "May 2017 – May 2025",
+        "description": "My responsibilities included overseeing frontend development, code reviews, conducting interviews for team recruitment, and, of course, writing code—lots of code. I had to find solutions to problems that had never been implemented anywhere, even in a similar form. I had to integrate solutions written in programming languages that were new and unfamiliar to me within a short timeframe. This allowed me to gain a fairly broad understanding of programming approaches and various application architectures. A key feature of the project was complete decentralization. Statistics from different blockchains were collected using sub-graphs, and open APIs were also used. All frontend code was deployed on IPFS. ",
         "stack": ["Angular", "React/Redux", "PWA", "GraphQL", "WebAssembly", "TypeScript", "NX", "NestJS", "Prisma", "Solidity", "EVM", "Bitcoin", "Vite", "Rollup", "GitLab Pipelines", "GitHub Pipelines", "Prettier", "ESLint", "Stylelint", "ls-lint"]
       },
       {
         "name": "Swaaed, Los Angeles",
         "spec": "Frontend Developer",
-        "period": "Июль 2016 - Май 2017",
-        "description": "Разработка решении связанных с автоматической публикацией разного рода постов в соц сетях. Интеграция c ИИ Watson от IBM, для определения целевой аудитории, настроений, платежеспособности, разного рода групп людей в соц сети Twitter и Facebook, по их постам и фотографиям. На выходе мы получали довольно точную информацию о том, кому будет интересен конкретный продукт, например спортивная одежда.",
+        "period": "July 2016 – May 2017",
+        "description": "Developing solutions related to the automatic publication of various types of posts on social media. Integration with IBM’s Watson AI to identify the target audience, sentiments, and purchasing power of various groups of people on Twitter and Facebook based on their posts and photos. As a result, we obtained fairly accurate information about who would be interested in a specific product, for example, sportswear.",
         "stack": ["Angular", "RxJS", "NodeJS", "Express", "TypeScript", "MongoDB", "Bootstrap", "SASS", "AWS", "S3", "WebPack", "TSLint"]
       },
       {
-        "name": "1 Бит, Красноярск",
+        "name": "1 Bit, Krasnoyarsk",
         "spec": "Full-stack developer",
-        "period": "Февраль 2015 – Август 2016",
-        "description": "Я занимался отдельным стартап проектом, не входящим в основное направление деятельности компании. Но проект был направлен как раз на дальнейшую интеграцию в рабочий процесс всей компании. Решение представляло из себя систему управления задачами, как для конкретного человека, так и для команды. Лично мой вклад это интегрирование архитектуры MVC в проект, в реализации нового на тот момент фреймворка Yii2. Что позволило больше не тратить время на стандартные задачи вроде валидаций данных или запросов к БД. Использование вместо SQL запросов, Active Record, значительно упростило использование БД, да и в целом внедрение фреймворка уменьшило количество написанного кода проекта.",
+        "period": "February 2015 – August 2016",
+        "description": "I was involved in a separate startup project that wasn’t part of the company’s main business focus. However, the project was aimed precisely at further integration into the company’s entire workflow. The solution was a task management system, suitable both for an individual person and for the team. My personal contribution was integrating the MVC architecture into the project and implementing the then‑new Yii2 framework. This made it possible to stop wasting time on standard tasks such as data validation or database queries. Using Active Record instead of SQL queries significantly simplified the use of the database, and overall, the introduction of the framework reduced the amount of code written for the project.",
         "stack": ["JavaScript", "CSS", "Yii-2", "PHP5", "PHP7", "NodeJS", "MySQL", "PostgreSQL", "WebPack"]
       },
       {
-        "name": "ТД Вальди, Красноярск",
+        "name": "Valdi Trading House, Krasnoyarsk",
         "spec": "Full-stack developer",
-        "period": "Январь 2014 – Февраль 2015",
-        "description": "В обязанности входило доработка и обслуживание самого сайта компании и внутренней клиент-серверной инфраструктуры. Компания занимается гос. закупками и тендерами по 44 и 223 фз. В связи со спецификой работы были достаточно высокие требования к безопасности. Требовалось консультировать персонал, распределять права доступа, к разным точкам сети. И дорабатывать уже работающий интернет магазин по продаже мебели.",
+        "period": "January 2014 – February 2015",
+        "description": "The responsibilities included the completion and maintenance of the company's website itself and the internal client-server infrastructure. The company is engaged in the state. procurement and tenders under 44 and 223 Federal laws. Due to the specifics of the work, there were quite high safety requirements. It was necessary to consult the staff, distribute access rights to different points of the network. And to refine an already operating online furniture store.",
         "stack": ["PHP5", "Yii-2", "NodeJS", "MSSQL", "Active Directory Windows", "Shell", "Bash"]
       }
     ]
+  },
+  "summary": {
+    "title": "Summary",
+    "text": "I have been working as a frontend developer for over 10 years. For me, it’s not just about knowing frameworks, libraries, and UI kits. Although I have experience in commercial development with most of them.\nFor me, frontend is primarily about creating a beautiful, intuitive, responsive, user‑friendly, and accessible interface for all users. Which is then implemented using the technology suitable for the specific task, be it a web, mobile, or desktop application. Throughout the entire period of my practice, I honed my skills, and if it was necessary to study related topics that did not pertain to the development of science, I did so. Namely, Theory of Colours, Designing Calm UX Principles."
   },
   "competence": {
     "lang": {

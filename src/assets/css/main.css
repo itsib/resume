@@ -38,7 +38,7 @@ main {
   }
 
   aside {
-    width: var(--asside-width);
+    width: 320px;
     flex-shrink: 0;
   }
 }
@@ -138,7 +138,7 @@ main {
 
       .icon {
         top: 3px;
-        font-size: 1.125rem;
+        font-size: 1.125em;
         color: var(--color-accent);
         margin-right: 0.25rem;
         position: relative;
@@ -302,6 +302,7 @@ main {
 
         .stack {
           margin-top: 0.5rem;
+          break-inside: avoid;
 
           .chip {
             margin: 1px;
@@ -322,4 +323,56 @@ main {
 footer {
   display: block;
   height: 5rem;
+}
+
+@page :first {
+  margin: 0 0 1cm;
+
+  @top-center {
+    content: "";
+  }
+}
+
+@page {
+  size: a4 portrait;
+  margin: 1cm 0;
+
+  @bottom-left {
+    content: "https://itsib.su";
+    padding-left: 1cm;
+  }
+}
+
+@media print {
+  :root {
+    print-color-adjust: exact;
+    mso-page-scale: 80%;
+  }
+
+  main {
+
+    aside {
+      width: 260px;
+    }
+  }
+
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  #header {
+
+    .contacts {
+      margin-top: 0;
+      font-size: 0.825rem;
+    }
+  }
+
+  #experience {
+
+    li  {
+      page-break-inside: auto;
+    }
+  }
 }
