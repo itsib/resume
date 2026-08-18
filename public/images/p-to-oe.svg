@@ -1,0 +1,1791 @@
+<svg id="p2oe-logo" xmlns="http://www.w3.org/2000/svg" viewBox="82 82 1036 1036" role="img" class="quiet-easter">
+  <defs>
+    <style>
+      .tile {
+      fill: url(#d-tileFill);
+      filter: url(#d-tileShadow);
+      }
+      .shine-top {
+      fill: #4cbcff;
+      opacity: 0.12;
+      filter: url(#d-rimBlur);
+      transform-origin: 525px 160px;
+      animation: glassBreatheTop 8.8s ease-in-out infinite;
+      }
+      .shine-bottom {
+      fill: #7b65ff;
+      opacity: 0.12;
+      filter: url(#d-rimBlur);
+      transform-origin: 735px 1052px;
+      animation: glassBreatheBottom 10.6s ease-in-out infinite -2.2s;
+      }
+      .rim-glow-top {
+      fill: none;
+      stroke: #9bc9ff;
+      stroke-width: 24;
+      stroke-linecap: round;
+      opacity: 0.08;
+      filter: url(#d-rimBlur);
+      animation: glassRimGlow 9.4s ease-in-out infinite -1.1s;
+      }
+      .rim-glow-bottom {
+      fill: none;
+      stroke: #9b8cff;
+      stroke-width: 20;
+      stroke-linecap: round;
+      opacity: 0.08;
+      filter: url(#d-rimBlur);
+      animation: glassRimGlow 10.8s ease-in-out infinite -3.4s;
+      }
+      .tile-rim {
+      fill: none;
+      stroke: url(#d-tileRim);
+      stroke-width: 5;
+      animation: glassRimPulse 11.5s ease-in-out infinite;
+      }
+      .tile-hairline {
+      fill: none;
+      stroke: url(#d-tileHairline);
+      stroke-width: 2;
+      animation: glassHairlinePulse 13s ease-in-out infinite -4s;
+      }
+      .arc-shape {
+      filter: url(#d-arcGlow);
+      }
+      .top-arc {
+      fill: url(#d-arcTop);
+      }
+      .top-depth {
+      fill: url(#d-arcTopDepth);
+      }
+      .bottom-arc {
+      fill: url(#d-arcBottom);
+      }
+      .bottom-depth {
+      fill: url(#d-arcBottomDepth);
+      }
+      .top-arc,
+      .bottom-arc,
+      .top-depth,
+      .bottom-depth {
+      transform-box: view-box;
+      transform-origin: center;
+      }
+
+      #p2oe-logo.is-activated .top-arc {
+      animation: activationTopArc 700ms ease-out;
+      }
+
+      #p2oe-logo.is-activated .top-depth {
+      animation: activationTopDepth 700ms ease-out;
+      }
+
+      #p2oe-logo.is-activated .bottom-arc {
+      animation: activationBottomArc 700ms ease-out 180ms;
+      }
+
+      #p2oe-logo.is-activated .bottom-depth {
+      animation: activationBottomDepth 700ms ease-out 180ms;
+      }
+      .mark {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      }
+      .main {
+      stroke-width: 34;
+      filter: url(#d-softGlow);
+      }
+      .white-main {
+      stroke: url(#d-whiteMark);
+      }
+      .blue-main {
+      stroke: url(#d-blueMark);
+      }
+      .e-top-segment {
+      fill: url(#d-whiteMark);
+      filter: url(#d-softGlow);
+      }
+
+      .photon-path {
+      fill: none;
+      stroke: none;
+      }
+
+      .photon-veil {
+      fill: none;
+      stroke-linecap: round;
+      opacity: 0.4;
+      pointer-events: none;
+      filter: url(#photonVeilGlow);
+      }
+
+      .photon-veil.top {
+      stroke: url(#photonTopTrail);
+      stroke-width: 5;
+      stroke-dasharray: 34 62 10 230;
+      animation: photonVeilTop 7s linear infinite;
+      }
+
+      .photon-veil.bottom {
+      stroke: url(#photonBottomTrail);
+      stroke-width: 5;
+      stroke-dasharray: 38 70 8 220;
+      animation: photonVeilBottom 7s linear infinite 1.8s;
+      }
+
+      .photon-orb {
+      pointer-events: none;
+      filter: url(#photonGlow);
+      opacity: 0;
+      animation: photonPresence 7s ease-in-out infinite;
+      }
+
+      .photon-orb.bottom {
+      animation-delay: 1.8s;
+      }
+
+      #p2oe-logo.quiet-easter:not(.is-activated) .photon-veil,
+      #p2oe-logo.quiet-easter .photon-orb {
+      opacity: 0 !important;
+      }
+
+      #p2oe-logo.is-activated .photon-veil.top {
+      animation: activationTopVeil 700ms ease-out both;
+      }
+
+      #p2oe-logo.is-activated .photon-veil.bottom {
+      animation: activationBottomVeil 700ms ease-out 180ms both;
+      }
+
+      .photon-shape {
+      transform: scale(0.75);
+      }
+
+      .photon-halo {
+      mix-blend-mode: screen;
+      }
+
+      .photon-orb.top .photon-core {
+      fill: #b99cff;
+      }
+
+      .photon-orb.bottom .photon-core {
+      fill: #64dbff;
+      }
+
+      .photon-orb.top .photon-halo {
+      fill: url(#photonCoreTop);
+      }
+
+      .photon-orb.bottom .photon-halo {
+      fill: url(#photonCoreBottom);
+      }
+
+      .spark {
+      fill: currentColor;
+      transform-box: fill-box;
+      transform-origin: center;
+      opacity: var(--spark-rest, 0.12);
+      animation: sparkFlicker var(--twinkle, 920ms) ease-in-out infinite;
+      animation-delay: var(--delay, 0ms);
+      }
+
+      .tail-spark {
+      fill: currentColor;
+      opacity: var(--tail-rest, 0.18);
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: tailSparkFlicker var(--twinkle, 1320ms) ease-in-out
+      infinite;
+      animation-delay: var(--delay, 0ms);
+      }
+
+      .photon-orb.top .tail-spark.glow {
+      fill: url(#photonCoreTop);
+      opacity: 0.95;
+      }
+
+      .photon-orb.bottom .tail-spark.glow {
+      fill: url(#photonCoreBottom);
+      opacity: 0.95;
+      }
+
+      .photon-tail-cloud {
+      transform: scale(1.38, 1.22);
+      transform-origin: 0 0;
+      }
+
+      .spark-line {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      opacity: var(--line-rest, 0.22);
+      animation: sparkFlicker var(--twinkle, 860ms) ease-in-out infinite;
+      animation-delay: var(--delay, 0ms);
+      }
+
+      .photon-orb.top {
+      color: #9b6cff;
+      }
+
+      .photon-orb.bottom {
+      color: #34cfff;
+      }
+
+      #p2oe-mark,
+      #p2oe-o,
+      #p2oe-e {
+      transform-box: view-box;
+      transform-origin: 0 0;
+      transition: transform 900ms cubic-bezier(0.2, 0.9, 0.2, 1.08);
+      }
+
+      #p2oe-mark.is-power {
+      transform: translate(78px, 0);
+      }
+
+      #p2oe-mark.is-power #p2oe-o,
+      #p2oe-mark.is-power #p2oe-e {
+      transform: translate(-168px, 0);
+      }
+
+      #p2oe-two {
+      transform-box: fill-box;
+      transform-origin: center;
+      transition:
+      transform 900ms cubic-bezier(0.2, 0.9, 0.2, 1.08),
+      filter 320ms ease;
+      }
+
+      #p2oe-two.is-power {
+      transform: translate(-104px, -104px) scale(0.6);
+      filter: url(#d-softGlow);
+      }
+
+      .stickman {
+      --stickman-line: #7d5fe6;
+      --stickman-head-fill: rgba(125, 95, 230, 0.22);
+      opacity: 0;
+      pointer-events: none;
+      color: var(--stickman-line);
+      filter: url(#stickmanNeonDark);
+      transition: opacity 240ms ease;
+      }
+
+      .stickman line,
+      .stickman circle,
+      .stickman path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 4.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-opacity: 0.72;
+      }
+
+      .stickman .head {
+      fill: var(--stickman-head-fill);
+      }
+
+      .stickman.paused *,
+      .water-splash.paused *,
+      .activation-photon.paused,
+      .activation-photon.paused * {
+      animation-play-state: paused !important;
+      }
+
+      .stickman .body-wrap,
+      .stickman .shoulders,
+      .stickman .hips,
+      .stickman .body {
+      transform-box: fill-box;
+      transform-origin: center;
+      }
+
+      .stickman .upper,
+      .stickman .lower {
+      transform-box: fill-box;
+      transform-origin: 0 0;
+      }
+
+      .stickman.swimming .body-wrap {
+      animation: swimmerBody 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .arm-a .upper {
+      animation: swimmerArmAUpper 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .arm-a .lower {
+      animation: swimmerArmALower 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .arm-b .upper {
+      animation: swimmerArmBUpper 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .arm-b .lower {
+      animation: swimmerArmBLower 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .leg-a .upper {
+      animation: swimmerLegAUpper 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .leg-a .lower {
+      animation: swimmerLegALower 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .leg-b .upper {
+      animation: swimmerLegBUpper 760ms ease-in-out infinite;
+      }
+
+      .stickman.swimming .leg-b .lower {
+      animation: swimmerLegBLower 760ms ease-in-out infinite;
+      }
+
+      .stickman.diving .body-wrap {
+      animation: swimmerDiveBody 620ms cubic-bezier(0.2, 0.9, 0.2, 1)
+      forwards;
+      }
+
+      .stickman.diving .shoulders {
+      animation: swimmerDiveShoulders 620ms
+      cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      }
+
+      .stickman.diving .arm-a .upper,
+      .stickman.diving .arm-b .upper {
+      animation: swimmerDiveUpperArms 620ms
+      cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      }
+
+      .stickman.diving .arm-a .lower,
+      .stickman.diving .arm-b .lower {
+      animation: swimmerDiveLowerArms 620ms
+      cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      }
+
+      .stickman.diving .leg-a .upper,
+      .stickman.diving .leg-b .upper {
+      animation: swimmerDiveUpperLegs 620ms
+      cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      }
+
+      .stickman.diving .leg-a .lower,
+      .stickman.diving .leg-b .lower {
+      animation: swimmerDiveLowerLegs 620ms
+      cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      }
+
+      .stickman.energizing .body-wrap {
+      animation: swimmerEnergizeBody 560ms ease-in-out infinite
+      alternate;
+      }
+
+      .stickman.energizing .arm-a .upper {
+      animation: swimmerEnergizeRightUpper 560ms ease-in-out infinite
+      alternate;
+      }
+
+      .stickman.energizing .arm-a .lower {
+      animation: swimmerEnergizeRightLower 560ms ease-in-out infinite
+      alternate;
+      }
+
+      .stickman.energizing .arm-b .upper {
+      animation: swimmerEnergizeLeftUpper 560ms ease-in-out infinite
+      alternate;
+      }
+
+      .stickman.energizing .arm-b .lower {
+      animation: swimmerEnergizeLeftLower 560ms ease-in-out infinite
+      alternate;
+      }
+
+      .stickman.energizing .leg-a .upper,
+      .stickman.energizing .leg-b .upper {
+      animation: swimmerEnergizeUpperLegs 620ms ease-in-out infinite
+      alternate;
+      }
+
+      .stickman.energizing .leg-a .lower,
+      .stickman.energizing .leg-b .lower {
+      animation: swimmerEnergizeLowerLegs 620ms ease-in-out infinite
+      alternate;
+      }
+
+      .activation-photon {
+      opacity: 0;
+      pointer-events: none;
+      color: #a88cff;
+      filter: url(#activationPhotonGlow);
+      transform-box: view-box;
+      transform-origin: center;
+      }
+
+      .activation-photon .photon-body,
+      .activation-photon .photon-tail,
+      .activation-photon .particle {
+      transform-box: fill-box;
+      transform-origin: center;
+      }
+
+      .activation-photon .photon-body {
+      opacity: 0;
+      }
+
+      .activation-photon .photon-tail {
+      opacity: 0;
+      }
+
+      .activation-photon .halo-wide {
+      fill: url(#activationPhotonHaloWide);
+      mix-blend-mode: screen;
+      }
+
+      .activation-photon .halo-tight {
+      fill: url(#activationPhotonHaloTight);
+      mix-blend-mode: screen;
+      }
+
+      .activation-photon .core {
+      fill: url(#activationPhotonCore);
+      }
+
+      .activation-photon .tail {
+      fill: url(#activationPhotonTail);
+      }
+
+      .activation-photon .particle {
+      opacity: 0;
+      }
+
+      .activation-photon .cool {
+      fill: #d3c4ff;
+      }
+
+      .activation-photon .bright {
+      fill: #efe9ff;
+      }
+
+      .activation-photon .violet {
+      fill: #7d5fe6;
+      }
+
+      .activation-photon.active {
+      opacity: 1;
+      }
+
+      .activation-photon.active .photon-body {
+      opacity: 1;
+      animation: activationPhotonPulse 980ms ease-in-out infinite;
+      }
+
+      .activation-photon.active .photon-tail {
+      opacity: 0.55;
+      animation: activationPhotonTailPulse 980ms ease-in-out infinite;
+      }
+
+      .activation-photon.active .particle-a {
+      animation: activationPhotonParticleA 620ms ease-out forwards;
+      }
+
+      .activation-photon.active .particle-b {
+      animation: activationPhotonParticleB 610ms ease-out 20ms forwards;
+      }
+
+      .activation-photon.active .particle-c {
+      animation: activationPhotonParticleC 600ms ease-out 40ms forwards;
+      }
+
+      .activation-photon.active .particle-d {
+      animation: activationPhotonParticleD 620ms ease-out 55ms forwards;
+      }
+
+      .activation-photon.active .particle-e {
+      animation: activationPhotonParticleE 590ms ease-out 75ms forwards;
+      }
+
+      .activation-photon.active .particle-f {
+      animation: activationPhotonParticleF 610ms ease-out 95ms forwards;
+      }
+
+      .activation-photon.active .particle-g {
+      animation: activationPhotonParticleG 580ms ease-out 110ms forwards;
+      }
+
+      .activation-photon.active .particle-h {
+      animation: activationPhotonParticleH 620ms ease-out 130ms forwards;
+      }
+
+      .activation-photon.active .particle-i {
+      animation: activationPhotonParticleI 570ms ease-out 145ms forwards;
+      }
+
+      .activation-photon.active .particle-j {
+      animation: activationPhotonParticleJ 600ms ease-out 165ms forwards;
+      }
+
+      .activation-photon.active .particle-k {
+      animation: activationPhotonParticleK 580ms ease-out 185ms forwards;
+      }
+
+      .activation-photon.active .particle-l {
+      animation: activationPhotonParticleL 610ms ease-out 205ms forwards;
+      }
+
+      .water-splash {
+      opacity: 0;
+      pointer-events: none;
+      color: #7ee8ff;
+      filter: url(#photonGlow);
+      }
+
+      .water-splash circle,
+      .water-splash path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 5.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transform-box: fill-box;
+      transform-origin: center;
+      }
+
+      .water-splash circle {
+      fill: currentColor;
+      fill-opacity: 0.3;
+      stroke: #dffbff;
+      }
+
+      .water-splash.active {
+      animation: waterSplashFade 1900ms ease-out forwards;
+      }
+
+      .water-splash.active .drop-a {
+      animation: waterBubbleA 1500ms ease-out forwards;
+      }
+
+      .water-splash.active .drop-b {
+      animation: waterBubbleB 1600ms ease-out forwards;
+      }
+
+      .water-splash.active .drop-c {
+      animation: waterBubbleC 1450ms ease-out forwards;
+      }
+
+      .water-splash.active .drop-d {
+      animation: waterBubbleD 1550ms ease-out forwards;
+      }
+
+      .water-splash.active .ripple {
+      animation: waterRipple 1800ms ease-out forwards;
+      }
+
+      @keyframes glassBreatheTop {
+      0%,
+      100% {
+      opacity: 0.1;
+      transform: translate(-2px, 2px) scale(0.985, 0.96);
+      }
+      42% {
+      opacity: 0.17;
+      transform: translate(6px, -4px) scale(1.025, 1.08);
+      }
+      68% {
+      opacity: 0.135;
+      transform: translate(1px, -1px) scale(1.005, 1.02);
+      }
+      }
+
+      @keyframes glassBreatheBottom {
+      0%,
+      100% {
+      opacity: 0.08;
+      transform: translate(2px, -1px) scale(0.98, 0.96);
+      }
+      48% {
+      opacity: 0.155;
+      transform: translate(-5px, 4px) scale(1.025, 1.08);
+      }
+      72% {
+      opacity: 0.11;
+      transform: translate(-1px, 1px) scale(1.005, 1.01);
+      }
+      }
+
+      @keyframes glassRimGlow {
+      0%,
+      100% {
+      opacity: 0.055;
+      stroke-width: 18;
+      }
+      45% {
+      opacity: 0.13;
+      stroke-width: 27;
+      }
+      70% {
+      opacity: 0.085;
+      stroke-width: 22;
+      }
+      }
+
+      @keyframes glassRimPulse {
+      0%,
+      100% {
+      opacity: 0.78;
+      stroke-width: 4.6;
+      }
+      46% {
+      opacity: 1;
+      stroke-width: 5.8;
+      }
+      74% {
+      opacity: 0.88;
+      stroke-width: 5.1;
+      }
+      }
+
+      @keyframes glassHairlinePulse {
+      0%,
+      100% {
+      opacity: 0.62;
+      stroke-width: 1.6;
+      }
+      52% {
+      opacity: 0.94;
+      stroke-width: 2.35;
+      }
+      78% {
+      opacity: 0.72;
+      stroke-width: 1.9;
+      }
+      }
+
+      @keyframes swimmerBody {
+      0%,
+      100% {
+      transform: translateY(0) rotate(-5deg);
+      }
+      50% {
+      transform: translateY(-2px) rotate(5deg);
+      }
+      }
+
+      @keyframes swimmerArmAUpper {
+      0%,
+      100% {
+      transform: rotate(34deg);
+      }
+      50% {
+      transform: rotate(-18deg);
+      }
+      }
+
+      @keyframes swimmerArmALower {
+      0% {
+      transform: rotate(-24deg);
+      }
+      35% {
+      transform: rotate(-36deg);
+      }
+      70% {
+      transform: rotate(-16deg);
+      }
+      100% {
+      transform: rotate(-28deg);
+      }
+      }
+
+      @keyframes swimmerArmBUpper {
+      0%,
+      100% {
+      transform: rotate(-18deg);
+      }
+      50% {
+      transform: rotate(34deg);
+      }
+      }
+
+      @keyframes swimmerArmBLower {
+      0% {
+      transform: rotate(-16deg);
+      }
+      35% {
+      transform: rotate(-28deg);
+      }
+      70% {
+      transform: rotate(-36deg);
+      }
+      100% {
+      transform: rotate(-20deg);
+      }
+      }
+
+      @keyframes swimmerLegAUpper {
+      0%,
+      100% {
+      transform: rotate(-18deg);
+      }
+      50% {
+      transform: rotate(14deg);
+      }
+      }
+
+      @keyframes swimmerLegALower {
+      0%,
+      100% {
+      transform: rotate(32deg);
+      }
+      50% {
+      transform: rotate(-20deg);
+      }
+      }
+
+      @keyframes swimmerLegBUpper {
+      0%,
+      100% {
+      transform: rotate(14deg);
+      }
+      50% {
+      transform: rotate(-18deg);
+      }
+      }
+
+      @keyframes swimmerLegBLower {
+      0%,
+      100% {
+      transform: rotate(-20deg);
+      }
+      50% {
+      transform: rotate(32deg);
+      }
+      }
+
+      @keyframes swimmerDiveBody {
+      0% {
+      transform: translateY(0) scale(1) rotate(0deg);
+      }
+      45% {
+      transform: translateY(3px) scale(0.95, 0.98) rotate(3deg);
+      }
+      100% {
+      transform: translateY(12px) scale(0.82, 0.9) rotate(8deg);
+      }
+      }
+
+      @keyframes swimmerDiveShoulders {
+      0% {
+      transform: translateY(0);
+      }
+      100% {
+      transform: translateY(-12px);
+      }
+      }
+
+      @keyframes swimmerDiveUpperArms {
+      0% {
+      transform: rotate(0deg);
+      }
+      45% {
+      transform: rotate(-32deg);
+      }
+      100% {
+      transform: rotate(-58deg);
+      }
+      }
+
+      @keyframes swimmerDiveLowerArms {
+      0% {
+      transform: rotate(0deg);
+      }
+      45% {
+      transform: rotate(-4deg);
+      }
+      100% {
+      transform: rotate(-8deg);
+      }
+      }
+
+      @keyframes swimmerDiveUpperLegs {
+      0% {
+      transform: rotate(0deg);
+      }
+      45% {
+      transform: rotate(15deg);
+      }
+      100% {
+      transform: rotate(36deg);
+      }
+      }
+
+      @keyframes swimmerDiveLowerLegs {
+      0% {
+      transform: rotate(0deg);
+      }
+      45% {
+      transform: rotate(-24deg);
+      }
+      100% {
+      transform: rotate(-52deg);
+      }
+      }
+
+      @keyframes activationTopArc {
+      0%,
+      100% {
+      filter: url(#d-arcGlow);
+      opacity: 1;
+      }
+      18%,
+      54% {
+      filter: url(#activationArcGlow);
+      opacity: 1;
+      }
+      }
+
+      @keyframes activationTopDepth {
+      0%,
+      100% {
+      opacity: 1;
+      transform: translateY(0);
+      }
+      44% {
+      opacity: 0.72;
+      transform: translateY(0);
+      }
+      }
+
+      @keyframes activationBottomArc {
+      0%,
+      100% {
+      filter: url(#d-arcGlow);
+      opacity: 1;
+      }
+      18%,
+      54% {
+      filter: url(#activationArcGlow);
+      opacity: 1;
+      }
+      }
+
+      @keyframes activationBottomDepth {
+      0%,
+      100% {
+      opacity: 1;
+      transform: translateY(0);
+      }
+      44% {
+      opacity: 0.72;
+      transform: translateY(0);
+      }
+      }
+
+      @keyframes activationTopVeil {
+      0% {
+      opacity: 0;
+      stroke-width: 5;
+      stroke-dasharray: 22 278;
+      stroke-dashoffset: 52;
+      }
+      24% {
+      opacity: 0.92;
+      stroke-width: 10;
+      stroke-dasharray: 96 204;
+      stroke-dashoffset: 0;
+      }
+      68% {
+      opacity: 0.58;
+      stroke-width: 8;
+      stroke-dasharray: 126 174;
+      stroke-dashoffset: -26;
+      }
+      100% {
+      opacity: 0;
+      stroke-width: 5;
+      stroke-dasharray: 34 62 10 230;
+      stroke-dashoffset: -58;
+      }
+      }
+
+      @keyframes activationBottomVeil {
+      0% {
+      opacity: 0;
+      stroke-width: 5;
+      stroke-dasharray: 22 278;
+      stroke-dashoffset: -48;
+      }
+      24% {
+      opacity: 0.84;
+      stroke-width: 9;
+      stroke-dasharray: 92 208;
+      stroke-dashoffset: 0;
+      }
+      68% {
+      opacity: 0.5;
+      stroke-width: 7.5;
+      stroke-dasharray: 118 182;
+      stroke-dashoffset: 24;
+      }
+      100% {
+      opacity: 0;
+      stroke-width: 5;
+      stroke-dasharray: 38 70 8 220;
+      stroke-dashoffset: 54;
+      }
+      }
+
+      @keyframes swimmerEnergizeBody {
+      from {
+      transform: translateY(0) scale(0.98, 1) rotate(-2deg);
+      }
+      to {
+      transform: translateY(-1px) scale(1.01, 0.99) rotate(3deg);
+      }
+      }
+
+      @keyframes swimmerEnergizeRightUpper {
+      from {
+      transform: rotate(-24deg);
+      }
+      to {
+      transform: rotate(-44deg);
+      }
+      }
+
+      @keyframes swimmerEnergizeRightLower {
+      from {
+      transform: rotate(0deg);
+      }
+      to {
+      transform: rotate(-10deg);
+      }
+      }
+
+      @keyframes swimmerEnergizeLeftUpper {
+      from {
+      transform: rotate(14deg);
+      }
+      to {
+      transform: rotate(0deg);
+      }
+      }
+
+      @keyframes swimmerEnergizeLeftLower {
+      from {
+      transform: rotate(2deg);
+      }
+      to {
+      transform: rotate(-2deg);
+      }
+      }
+
+      @keyframes swimmerEnergizeUpperLegs {
+      from {
+      transform: rotate(12deg);
+      }
+      to {
+      transform: rotate(-6deg);
+      }
+      }
+
+      @keyframes swimmerEnergizeLowerLegs {
+      from {
+      transform: rotate(-18deg);
+      }
+      to {
+      transform: rotate(10deg);
+      }
+      }
+
+      @keyframes activationPhotonPulse {
+      0% {
+      transform: scale(1);
+      }
+      45% {
+      transform: scale(1.08) translate(-1px, 1px);
+      }
+      100% {
+      transform: scale(1);
+      }
+      }
+
+      @keyframes activationPhotonTailPulse {
+      0%,
+      100% {
+      opacity: 0.38;
+      transform: translate(-2px, 0) scale(1);
+      }
+      50% {
+      opacity: 0.62;
+      transform: translate(-6px, 2px) scale(1.16);
+      }
+      }
+
+      @keyframes activationPhotonParticleA {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.32);
+      }
+      34% {
+      opacity: 0.68;
+      transform: translate(-18px, -10px) scale(0.95);
+      }
+      }
+
+      @keyframes activationPhotonParticleB {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.3);
+      }
+      36% {
+      opacity: 0.6;
+      transform: translate(12px, -21px) scale(0.82);
+      }
+      }
+
+      @keyframes activationPhotonParticleC {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.28);
+      }
+      38% {
+      opacity: 0.56;
+      transform: translate(24px, -5px) scale(0.78);
+      }
+      }
+
+      @keyframes activationPhotonParticleD {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.26);
+      }
+      40% {
+      opacity: 0.62;
+      transform: translate(15px, 17px) scale(0.76);
+      }
+      }
+
+      @keyframes activationPhotonParticleE {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.28);
+      }
+      42% {
+      opacity: 0.58;
+      transform: translate(-9px, 24px) scale(0.7);
+      }
+      }
+
+      @keyframes activationPhotonParticleF {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.3);
+      }
+      36% {
+      opacity: 0.66;
+      transform: translate(-25px, 7px) scale(0.84);
+      }
+      }
+
+      @keyframes activationPhotonParticleG {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.25);
+      }
+      44% {
+      opacity: 0.5;
+      transform: translate(-6px, -27px) scale(0.68);
+      }
+      }
+
+      @keyframes activationPhotonParticleH {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.28);
+      }
+      40% {
+      opacity: 0.56;
+      transform: translate(27px, 8px) scale(0.74);
+      }
+      }
+
+      @keyframes activationPhotonParticleI {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.22);
+      }
+      42% {
+      opacity: 0.52;
+      transform: translate(-17px, 18px) scale(0.6);
+      }
+      }
+
+      @keyframes activationPhotonParticleJ {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.24);
+      }
+      38% {
+      opacity: 0.5;
+      transform: translate(9px, 26px) scale(0.66);
+      }
+      }
+
+      @keyframes activationPhotonParticleK {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.2);
+      }
+      44% {
+      opacity: 0.48;
+      transform: translate(-27px, -3px) scale(0.58);
+      }
+      }
+
+      @keyframes activationPhotonParticleL {
+      0%,
+      100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.22);
+      }
+      40% {
+      opacity: 0.54;
+      transform: translate(20px, -17px) scale(0.62);
+      }
+      }
+
+      @keyframes waterSplashFade {
+      0% {
+      opacity: 0;
+      }
+      16% {
+      opacity: 0.75;
+      }
+      62% {
+      opacity: 0.62;
+      }
+      100% {
+      opacity: 0;
+      }
+      }
+
+      @keyframes waterBubbleA {
+      from {
+      transform: translate(0, 0) scale(0.6);
+      }
+      to {
+      transform: translate(-24px, -72px) scale(0.28);
+      }
+      }
+
+      @keyframes waterBubbleB {
+      from {
+      transform: translate(0, 0) scale(0.72);
+      }
+      to {
+      transform: translate(36px, -92px) scale(0.3);
+      }
+      }
+
+      @keyframes waterBubbleC {
+      from {
+      transform: translate(0, 0) scale(0.5);
+      }
+      to {
+      transform: translate(-44px, -36px) scale(0.22);
+      }
+      }
+
+      @keyframes waterBubbleD {
+      from {
+      transform: translate(0, 0) scale(0.62);
+      }
+      to {
+      transform: translate(50px, -48px) scale(0.24);
+      }
+      }
+
+      @keyframes waterRipple {
+      from {
+      transform: scale(0.25);
+      opacity: 0.68;
+      }
+      to {
+      transform: scale(1.65);
+      opacity: 0;
+      }
+      }
+
+      @keyframes photonPresence {
+      0%,
+      42%,
+      100% {
+      opacity: 0;
+      }
+      15%,
+      27% {
+      opacity: 1;
+      }
+      21% {
+      opacity: 0.78;
+      }
+      }
+
+      @keyframes photonVeilTop {
+      0% {
+      stroke-dashoffset: 350;
+      opacity: 0;
+      }
+      15%,
+      27% {
+      opacity: 0.55;
+      }
+      42%,
+      100% {
+      stroke-dashoffset: -40;
+      opacity: 0;
+      }
+      }
+
+      @keyframes photonVeilBottom {
+      0% {
+      stroke-dashoffset: 345;
+      opacity: 0;
+      }
+      15%,
+      27% {
+      opacity: 0.48;
+      }
+      42%,
+      100% {
+      stroke-dashoffset: -45;
+      opacity: 0;
+      }
+      }
+
+      @keyframes sparkFlicker {
+      0%,
+      100% {
+      opacity: var(--spark-rest, 0.12);
+      transform: translate(var(--jitter-x, 0px), var(--jitter-y, 0px))
+      scale(calc(var(--spark-scale, 1) * 0.35));
+      }
+      28% {
+      opacity: var(--spark-peak, 0.95);
+      transform: translate(
+      calc(var(--jitter-x, 0px) * -0.45),
+      calc(var(--jitter-y, 0px) * -0.45)
+      )
+      scale(calc(var(--spark-scale, 1) * 1.25));
+      }
+      55% {
+      opacity: var(--spark-mid, 0.35);
+      transform: translate(
+      calc(var(--jitter-x, 0px) * 0.35),
+      calc(var(--jitter-y, 0px) * 0.35)
+      )
+      scale(calc(var(--spark-scale, 1) * 0.68));
+      }
+      74% {
+      opacity: var(--spark-pop, 1);
+      transform: translate(
+      calc(var(--jitter-x, 0px) * 0.2),
+      calc(var(--jitter-y, 0px) * -0.2)
+      )
+      scale(calc(var(--spark-scale, 1) * 1));
+      }
+      }
+
+      @keyframes tailSparkFlicker {
+      0%,
+      100% {
+      opacity: var(--tail-rest, 0.18);
+      transform: translate(var(--jitter-x, 0px), var(--jitter-y, 0px))
+      scale(calc(var(--spark-scale, 1) * 0.42));
+      }
+      22% {
+      opacity: var(--tail-peak, 0.95);
+      transform: translate(
+      calc(var(--jitter-x, 0px) * -0.55),
+      calc(var(--jitter-y, 0px) * -0.55)
+      )
+      scale(calc(var(--spark-scale, 1) * 1.32));
+      }
+      48% {
+      opacity: var(--tail-mid, 0.42);
+      transform: translate(
+      calc(var(--jitter-x, 0px) * 0.4),
+      calc(var(--jitter-y, 0px) * 0.4)
+      )
+      scale(calc(var(--spark-scale, 1) * 0.72));
+      }
+      72% {
+      opacity: var(--tail-pop, 1);
+      transform: translate(
+      calc(var(--jitter-x, 0px) * 0.15),
+      calc(var(--jitter-y, 0px) * -0.15)
+      )
+      scale(calc(var(--spark-scale, 1) * 1.08));
+      }
+      }
+    </style>
+    <radialGradient id="d-tileFill" cx="50%" cy="42%" r="72%">
+      <stop offset="0" stop-color="#071322"></stop>
+      <stop offset="0.48" stop-color="#030914"></stop>
+      <stop offset="1" stop-color="#01040b"></stop>
+    </radialGradient>
+    <linearGradient id="d-tileRim" x1="166" y1="168" x2="1035" y2="1037" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#273955" stop-opacity=".15"></stop>
+      <stop offset="0.18" stop-color="#9bdcff" stop-opacity=".28"></stop>
+      <stop offset="0.42" stop-color="#ffffff" stop-opacity=".08"></stop>
+      <stop offset="0.72" stop-color="#a790ff" stop-opacity=".34"></stop>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".18"></stop>
+    </linearGradient>
+    <linearGradient id="d-tileHairline" x1="210" y1="166" x2="1012" y2="1018" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".06"></stop>
+      <stop offset="0.3" stop-color="#6bbcff" stop-opacity=".18"></stop>
+      <stop offset="0.56" stop-color="#ffffff" stop-opacity=".03"></stop>
+      <stop offset="0.82" stop-color="#8d7cff" stop-opacity=".2"></stop>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".24"></stop>
+    </linearGradient>
+    <linearGradient id="d-arcTop" x1="278" y1="170" x2="932" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1673cc"></stop>
+      <stop offset="0.16" stop-color="#1b96e6"></stop>
+      <stop offset="0.48" stop-color="#04c7f3"></stop>
+      <stop offset="0.77" stop-color="#08aee7"></stop>
+      <stop offset="1" stop-color="#167bd0"></stop>
+    </linearGradient>
+    <linearGradient id="d-arcTopDepth" x1="605" y1="56" x2="605" y2="285" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".14"></stop>
+      <stop offset="0.42" stop-color="#ffffff" stop-opacity=".02"></stop>
+      <stop offset="1" stop-color="#001b3f" stop-opacity=".34"></stop>
+    </linearGradient>
+    <linearGradient id="d-arcBottom" x1="278" y1="664" x2="932" y2="664" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#276ee3"></stop>
+      <stop offset="0.18" stop-color="#3e78f0"></stop>
+      <stop offset="0.52" stop-color="#6265ff"></stop>
+      <stop offset="0.78" stop-color="#735fff"></stop>
+      <stop offset="1" stop-color="#9671ff"></stop>
+    </linearGradient>
+    <linearGradient id="d-arcBottomDepth" x1="605" y1="548" x2="605" y2="778" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#001b3f" stop-opacity=".34"></stop>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity=".04"></stop>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".12"></stop>
+    </linearGradient>
+    <linearGradient id="d-blueMark" x1="335" y1="416" x2="575" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#268deb"></stop>
+      <stop offset="1" stop-color="#1876d3"></stop>
+    </linearGradient>
+    <linearGradient id="d-whiteMark" x1="44" y1="416" x2="1156" y2="416" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.91,0,0,1,65.64,0)">
+      <stop offset="0" stop-color="#f4f7fb"></stop>
+      <stop offset="0.5" stop-color="#e5ebf3"></stop>
+      <stop offset="1" stop-color="#f8fafc"></stop>
+    </linearGradient>
+    <filter id="d-tileShadow" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#000000" flood-opacity=".5"></feDropShadow>
+      <feDropShadow dx="0" dy="-12" stdDeviation="24" flood-color="#235dff" flood-opacity=".09"></feDropShadow>
+    </filter>
+    <filter id="d-rimBlur" x="-18%" y="-18%" width="136%" height="136%">
+      <feGaussianBlur stdDeviation="9"></feGaussianBlur>
+    </filter>
+    <filter id="d-softGlow" x="-12%" y="-18%" width="124%" height="136%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#dcecff" flood-opacity=".13"></feFlood>
+      <feComposite in2="blur" operator="in"></feComposite>
+      <feMerge>
+        <feMergeNode></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <filter id="d-arcGlow" x="-8%" y="-14%" width="116%" height="128%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#0fc2ff" flood-opacity=".16"></feFlood>
+      <feComposite in2="blur" operator="in"></feComposite>
+      <feMerge>
+        <feMergeNode></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <clipPath id="d-tileClip">
+      <rect x="136" y="132" width="928" height="928" rx="186"></rect>
+    </clipPath>
+    <clipPath id="d-topArcClip">
+      <path d="M271 285 C303 169 431 55 605 55 C779 55 907 169 939 285 L918 285 C888 191 770 84 605 84 C440 84 322 191 292 285 Z"></path>
+    </clipPath>
+    <clipPath id="d-bottomArcClip">
+      <path d="M271 548 C303 664 431 778 605 778 C779 778 907 664 939 548 L918 548 C888 642 770 749 605 749 C440 749 322 642 292 548 Z"></path>
+    </clipPath>
+
+    <radialGradient id="photonCoreTop" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#cbb8ff" stop-opacity="1"></stop>
+      <stop offset=".22" stop-color="#b18cff" stop-opacity=".95"></stop>
+      <stop offset=".48" stop-color="#8c63ff" stop-opacity=".74"></stop>
+      <stop offset=".74" stop-color="#6f5cff" stop-opacity=".34"></stop>
+      <stop offset="1" stop-color="#6d5cff" stop-opacity="0"></stop>
+    </radialGradient>
+
+    <radialGradient id="photonCoreBottom" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#a9f2ff" stop-opacity="1"></stop>
+      <stop offset=".22" stop-color="#64dbff" stop-opacity=".95"></stop>
+      <stop offset=".48" stop-color="#1db7ff" stop-opacity=".76"></stop>
+      <stop offset=".74" stop-color="#276ee3" stop-opacity=".34"></stop>
+      <stop offset="1" stop-color="#1b64ff" stop-opacity="0"></stop>
+    </radialGradient>
+
+    <linearGradient id="photonTopTrail" x1="271" y1="285" x2="939" y2="285" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#563cff" stop-opacity="0"></stop>
+      <stop offset=".38" stop-color="#805bff" stop-opacity=".2"></stop>
+      <stop offset=".58" stop-color="#d3c4ff" stop-opacity=".92"></stop>
+      <stop offset=".72" stop-color="#a76cff" stop-opacity=".4"></stop>
+      <stop offset="1" stop-color="#4e5bff" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <linearGradient id="photonBottomTrail" x1="939" y1="548" x2="271" y2="548" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b7dff" stop-opacity="0"></stop>
+      <stop offset=".35" stop-color="#168eff" stop-opacity=".2"></stop>
+      <stop offset=".57" stop-color="#9af0ff" stop-opacity=".9"></stop>
+      <stop offset=".74" stop-color="#27cfff" stop-opacity=".4"></stop>
+      <stop offset="1" stop-color="#226dff" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <radialGradient id="activationPhotonCore" cx="46%" cy="42%" r="58%">
+      <stop offset="0" stop-color="#efe9ff"></stop>
+      <stop offset=".28" stop-color="#d3c4ff" stop-opacity="1"></stop>
+      <stop offset=".62" stop-color="#b18cff" stop-opacity=".92"></stop>
+      <stop offset="1" stop-color="#9b6cff" stop-opacity="0"></stop>
+    </radialGradient>
+
+    <radialGradient id="activationPhotonHaloTight" cx="48%" cy="48%" r="52%">
+      <stop offset="0" stop-color="#d3c4ff" stop-opacity=".95"></stop>
+      <stop offset=".38" stop-color="#b18cff" stop-opacity=".68"></stop>
+      <stop offset=".72" stop-color="#9b6cff" stop-opacity=".34"></stop>
+      <stop offset="1" stop-color="#6f5cff" stop-opacity="0"></stop>
+    </radialGradient>
+
+    <radialGradient id="activationPhotonHaloWide" cx="50%" cy="50%" r="54%">
+      <stop offset="0" stop-color="#9b6cff" stop-opacity=".5"></stop>
+      <stop offset=".48" stop-color="#6f5cff" stop-opacity=".28"></stop>
+      <stop offset="1" stop-color="#4e5bff" stop-opacity="0"></stop>
+    </radialGradient>
+
+    <linearGradient id="activationPhotonTail" x1="-42" y1="10" x2="10" y2="-5">
+      <stop offset="0" stop-color="#4e5bff" stop-opacity="0"></stop>
+      <stop offset=".34" stop-color="#6f5cff" stop-opacity=".14"></stop>
+      <stop offset=".72" stop-color="#9b6cff" stop-opacity=".34"></stop>
+      <stop offset="1" stop-color="#d3c4ff" stop-opacity=".48"></stop>
+    </linearGradient>
+
+    <filter id="photonGlow" x="-180%" y="-180%" width="460%" height="460%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#8a63ff" flood-opacity=".85"></feFlood>
+      <feComposite in2="blur" operator="in" result="blueGlow"></feComposite>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="wideBlur"></feGaussianBlur>
+      <feFlood flood-color="#6f5cff" flood-opacity=".32"></feFlood>
+      <feComposite in2="wideBlur" operator="in" result="violetGlow"></feComposite>
+      <feMerge>
+        <feMergeNode in="violetGlow"/>
+        <feMergeNode in="blueGlow"/>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <filter id="stickmanNeonDark" x="-170%" y="-170%" width="440%" height="440%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="tightBlur"></feGaussianBlur>
+      <feFlood class="stickman-tight-flood" flood-color="#00bfe9" flood-opacity="0.62"></feFlood>
+      <feComposite in2="tightBlur" operator="in" result="tightGlow"></feComposite>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7.0" result="wideBlur"></feGaussianBlur>
+      <feFlood class="stickman-wide-flood" flood-color="#28d6ff" flood-opacity="0.28"></feFlood>
+      <feComposite in2="wideBlur" operator="in" result="wideGlow"></feComposite>
+      <feMerge>
+        <feMergeNode in="wideGlow"></feMergeNode>
+        <feMergeNode in="tightGlow"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <filter id="activationPhotonGlow" x="-220%" y="-220%" width="540%" height="540%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.2" result="tight"></feGaussianBlur>
+      <feFlood flood-color="#b18cff" flood-opacity="1"></feFlood>
+      <feComposite in2="tight" operator="in" result="innerGlow"></feComposite>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="wide"></feGaussianBlur>
+      <feFlood flood-color="#6f5cff" flood-opacity=".48"></feFlood>
+      <feComposite in2="wide" operator="in" result="outerGlow"></feComposite>
+      <feMerge>
+        <feMergeNode in="outerGlow"></feMergeNode>
+        <feMergeNode in="innerGlow"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <filter id="activationArcGlow" x="-16%" y="-24%" width="132%" height="148%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.4" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#84e8ff" flood-opacity=".58"></feFlood>
+      <feComposite in2="blur" operator="in" result="cyanGlow"></feComposite>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="11" result="wide"></feGaussianBlur>
+      <feFlood flood-color="#9b6cff" flood-opacity=".32"></feFlood>
+      <feComposite in2="wide" operator="in" result="violetGlow"></feComposite>
+      <feMerge>
+        <feMergeNode in="violetGlow"></feMergeNode>
+        <feMergeNode in="cyanGlow"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <filter id="photonVeilGlow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#2ccfff" flood-opacity=".7"></feFlood>
+      <feComposite in2="blur" operator="in"></feComposite>
+      <feMerge>
+        <feMergeNode></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect class="tile" x="136" y="132" width="928" height="928" rx="186"></rect>
+  <g clip-path="url(#d-tileClip)">
+    <ellipse class="shine-top" cx="525" cy="160" rx="390" ry="80"></ellipse>
+    <ellipse class="shine-bottom" cx="735" cy="1052" rx="390" ry="82"></ellipse>
+    <path class="rim-glow-top" d="M151 474 C151 270 286 150 492 150 H860 C978 150 1048 225 1048 340"></path>
+    <path class="rim-glow-bottom" d="M160 830 C160 972 260 1040 412 1040 H834 C982 1040 1042 945 1042 824"></path>
+  </g>
+  <rect class="tile-rim" x="136" y="132" width="928" height="928" rx="186"></rect>
+  <rect class="tile-hairline" x="151" y="147" width="898" height="898" rx="174"></rect>
+  <g transform="translate(140 280) scale(.76)">
+    <path class="arc-shape top-arc" d="M271 285 C303 169 431 55 605 55 C779 55 907 169 939 285 L918 285 C888 191 770 84 605 84 C440 84 322 191 292 285 Z"></path>
+    <path class="top-depth" d="M271 285 C303 169 431 55 605 55 C779 55 907 169 939 285 L918 285 C888 191 770 84 605 84 C440 84 322 191 292 285 Z"></path>
+    <path d="M300 280 C338 173 452 68 605 68 C758 68 872 173 910 280 L899 280 C858 190 753 91 605 91 C457 91 352 190 311 280 Z" clip-path="url(#d-topArcClip)" fill="#7feaff" opacity=".1"></path>
+    <path class="arc-shape bottom-arc" d="M271 548 C303 664 431 778 605 778 C779 778 907 664 939 548 L918 548 C888 642 770 749 605 749 C440 749 322 642 292 548 Z"></path>
+    <path class="bottom-depth" d="M271 548 C303 664 431 778 605 778 C779 778 907 664 939 548 L918 548 C888 642 770 749 605 749 C440 749 322 642 292 548 Z"></path>
+    <path d="M298 552 C338 656 454 764 605 764 C756 764 872 656 912 552 L900 552 C858 640 752 741 605 741 C458 741 352 640 310 552 Z" clip-path="url(#d-bottomArcClip)" fill="#ba9dff" opacity=".1"></path>
+
+    <path id="photonTopPath" class="photon-path" pathLength="300" d="M281 284 C315 176 439 72 605 72 C771 72 895 176 929 284"></path>
+    <path id="photonBottomPath" class="photon-path" pathLength="300" d="M929 549 C895 657 771 761 605 761 C439 761 315 657 281 549"></path>
+
+    <path class="photon-veil top" pathLength="300" d="M281 284 C315 176 439 72 605 72 C771 72 895 176 929 284"></path>
+    <path class="photon-veil bottom" pathLength="300" d="M929 549 C895 657 771 761 605 761 C439 761 315 657 281 549"></path>
+
+    <g class="photon-orb top">
+      <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;0.42;1" calcMode="spline" keySplines=".36 0 .18 1;0 0 1 1">
+        <mpath href="#photonTopPath"></mpath>
+      </animateMotion>
+      <g class="photon-shape">
+        <g class="photon-tail-cloud">
+          <circle class="tail-spark glow" cx="-112" cy="-9" r="4.2" style="--twinkle: 2267ms; --delay: -306ms; --jitter-x: -2.76px; --jitter-y: 3.09px; --spark-scale: 1.25; --tail-rest: 0.28; --tail-mid: 0.49; --tail-peak: 0.81; --tail-pop: 0.74;"></circle>
+          <circle class="tail-spark" cx="-101" cy="-29" r="2.1" style="--twinkle: 1059ms; --delay: -221ms; --jitter-x: 4.14px; --jitter-y: 2.20px; --spark-scale: 1.42; --tail-rest: 0.11; --tail-mid: 0.35; --tail-peak: 0.70; --tail-pop: 0.74;"></circle>
+          <circle class="tail-spark" cx="-96" cy="14" r="2.7" style="--twinkle: 1936ms; --delay: -518ms; --jitter-x: -5.50px; --jitter-y: -4.43px; --spark-scale: 0.93; --tail-rest: 0.12; --tail-mid: 0.56; --tail-peak: 0.90; --tail-pop: 0.75;"></circle>
+          <circle class="tail-spark" cx="-84" cy="-20" r="1.4" style="--twinkle: 1398ms; --delay: -219ms; --jitter-x: -1.20px; --jitter-y: -1.44px; --spark-scale: 1.21; --tail-rest: 0.14; --tail-mid: 0.58; --tail-peak: 0.86; --tail-pop: 0.56;"></circle>
+          <circle class="tail-spark glow" cx="-78" cy="-2" r="3.4" style="--twinkle: 1942ms; --delay: -110ms; --jitter-x: -1.58px; --jitter-y: 4.25px; --spark-scale: 0.86; --tail-rest: 0.21; --tail-mid: 0.51; --tail-peak: 0.62; --tail-pop: 0.75;"></circle>
+          <circle class="tail-spark" cx="-70" cy="23" r="1.25" style="--twinkle: 1661ms; --delay: -409ms; --jitter-x: 0.25px; --jitter-y: 0.57px; --spark-scale: 1.44; --tail-rest: 0.09; --tail-mid: 0.26; --tail-peak: 0.87; --tail-pop: 0.84;"></circle>
+          <circle class="tail-spark" cx="-63" cy="-31" r="1.2" style="--twinkle: 2011ms; --delay: -391ms; --jitter-x: 5.81px; --jitter-y: -2.70px; --spark-scale: 0.84; --tail-rest: 0.12; --tail-mid: 0.56; --tail-peak: 0.91; --tail-pop: 0.74;"></circle>
+          <circle class="tail-spark glow" cx="-55" cy="-12" r="2.8" style="--twinkle: 1291ms; --delay: -36ms; --jitter-x: 3.50px; --jitter-y: 5.00px; --spark-scale: 0.89; --tail-rest: 0.18; --tail-mid: 0.53; --tail-peak: 0.83; --tail-pop: 0.58;"></circle>
+          <circle class="tail-spark" cx="-48" cy="11" r="1.9" style="--twinkle: 1399ms; --delay: -321ms; --jitter-x: -1.13px; --jitter-y: -1.24px; --spark-scale: 1.11; --tail-rest: 0.26; --tail-mid: 0.53; --tail-peak: 0.96; --tail-pop: 0.61;"></circle>
+          <circle class="tail-spark" cx="-39" cy="-24" r="1.1" style="--twinkle: 2025ms; --delay: -559ms; --jitter-x: -6.88px; --jitter-y: -5.59px; --spark-scale: 1.14; --tail-rest: 0.13; --tail-mid: 0.27; --tail-peak: 0.98; --tail-pop: 0.85;"></circle>
+          <circle class="tail-spark glow" cx="-31" cy="-6" r="1.8" style="--twinkle: 1390ms; --delay: -101ms; --jitter-x: 3.47px; --jitter-y: -2.51px; --spark-scale: 0.93; --tail-rest: 0.13; --tail-mid: 0.48; --tail-peak: 0.88; --tail-pop: 0.81;"></circle>
+          <circle class="tail-spark" cx="-24" cy="16" r="1" style="--twinkle: 1361ms; --delay: -108ms; --jitter-x: 2.97px; --jitter-y: -4.51px; --spark-scale: 0.97; --tail-rest: 0.24; --tail-mid: 0.26; --tail-peak: 0.66; --tail-pop: 0.77;"></circle>
+          <circle class="tail-spark" cx="-18" cy="-18" r=".9" style="--twinkle: 2319ms; --delay: -581ms; --jitter-x: 2.65px; --jitter-y: -0.78px; --spark-scale: 1.42; --tail-rest: 0.27; --tail-mid: 0.46; --tail-peak: 0.91; --tail-pop: 0.76;"></circle>
+          <path class="spark-line" d="M-116 -24 L-105 -18" style="--twinkle: 1473ms; --delay: -356ms; --jitter-x: -3.33px; --jitter-y: -2.91px; --spark-scale: 1.13; --spark-rest: 0.17; --spark-mid: 0.48; --spark-peak: 0.71; --spark-pop: 0.68;"></path>
+          <path class="spark-line" d="M-88 29 L-75 20" style="--twinkle: 614ms; --delay: -181ms; --jitter-x: -1.62px; --jitter-y: 0.87px; --spark-scale: 0.74; --spark-rest: 0.16; --spark-mid: 0.23; --spark-peak: 0.94; --spark-pop: 0.81;"></path>
+          <path class="spark-line" d="M-58 -38 L-48 -29" style="--twinkle: 1263ms; --delay: -386ms; --jitter-x: -0.35px; --jitter-y: 2.06px; --spark-scale: 1.09; --spark-rest: 0.06; --spark-mid: 0.47; --spark-peak: 0.76; --spark-pop: 0.59;"></path>
+        </g>
+        <circle class="photon-halo" cx="0" cy="0" r="31"></circle>
+        <circle class="photon-halo" cx="0" cy="0" r="18" opacity=".86"></circle>
+        <circle class="photon-core" cx="0" cy="0" r="7"></circle>
+        <circle class="spark" cx="-46" cy="-24" r="2.8" style="--twinkle: 721ms; --delay: -14ms; --jitter-x: 0.70px; --jitter-y: 0.28px; --spark-scale: 0.92; --spark-rest: 0.10; --spark-mid: 0.32; --spark-peak: 0.66; --spark-pop: 0.74;"></circle>
+        <circle class="spark" cx="-34" cy="21" r="1.8" style="--twinkle: 1275ms; --delay: -102ms; --jitter-x: -1.97px; --jitter-y: -1.33px; --spark-scale: 0.81; --spark-rest: 0.12; --spark-mid: 0.26; --spark-peak: 0.72; --spark-pop: 0.84;"></circle>
+        <circle class="spark" cx="-18" cy="-32" r="1.8" style="--twinkle: 1286ms; --delay: -232ms; --jitter-x: -0.61px; --jitter-y: -1.13px; --spark-scale: 1.08; --spark-rest: 0.08; --spark-mid: 0.44; --spark-peak: 0.69; --spark-pop: 0.51;"></circle>
+        <circle class="spark" cx="18" cy="-18" r="2.1" style="--twinkle: 1590ms; --delay: -189ms; --jitter-x: -1.59px; --jitter-y: -0.89px; --spark-scale: 1.04; --spark-rest: 0.10; --spark-mid: 0.34; --spark-peak: 0.99; --spark-pop: 0.80;"></circle>
+        <circle class="spark" cx="25" cy="16" r="1.3" style="--twinkle: 1412ms; --delay: -59ms; --jitter-x: 2.94px; --jitter-y: 3.92px; --spark-scale: 1.23; --spark-rest: 0.11; --spark-mid: 0.49; --spark-peak: 0.86; --spark-pop: 0.81;"></circle>
+        <circle class="spark" cx="-62" cy="5" r="1.1" style="--twinkle: 1655ms; --delay: -506ms; --jitter-x: 1.20px; --jitter-y: 3.29px; --spark-scale: 0.97; --spark-rest: 0.13; --spark-mid: 0.24; --spark-peak: 0.99; --spark-pop: 0.97;"></circle>
+        <circle class="spark" cx="5" cy="31" r="1.2" style="--twinkle: 1307ms; --delay: -354ms; --jitter-x: 1.63px; --jitter-y: -2.53px; --spark-scale: 1.13; --spark-rest: 0.10; --spark-mid: 0.25; --spark-peak: 0.93; --spark-pop: 0.66;"></circle>
+        <circle class="spark" cx="-78" cy="-14" r=".9" style="--twinkle: 1775ms; --delay: -372ms; --jitter-x: 0.21px; --jitter-y: 2.49px; --spark-scale: 0.98; --spark-rest: 0.12; --spark-mid: 0.26; --spark-peak: 0.62; --spark-pop: 0.96;"></circle>
+        <circle class="spark" cx="-70" cy="28" r="1" style="--twinkle: 1695ms; --delay: -108ms; --jitter-x: -0.22px; --jitter-y: 2.88px; --spark-scale: 0.86; --spark-rest: 0.13; --spark-mid: 0.46; --spark-peak: 0.60; --spark-pop: 0.54;"></circle>
+        <circle class="spark" cx="-55" cy="-40" r=".85" style="--twinkle: 1492ms; --delay: -465ms; --jitter-x: -1.98px; --jitter-y: 1.78px; --spark-scale: 1.21; --spark-rest: 0.06; --spark-mid: 0.35; --spark-peak: 0.82; --spark-pop: 0.60;"></circle>
+        <circle class="spark" cx="-25" cy="43" r=".9" style="--twinkle: 655ms; --delay: -32ms; --jitter-x: -1.78px; --jitter-y: -2.49px; --spark-scale: 0.90; --spark-rest: 0.12; --spark-mid: 0.39; --spark-peak: 0.69; --spark-pop: 0.67;"></circle>
+        <circle class="spark" cx="34" cy="-31" r="1.05" style="--twinkle: 1150ms; --delay: -290ms; --jitter-x: 1.66px; --jitter-y: 1.64px; --spark-scale: 1.03; --spark-rest: 0.10; --spark-mid: 0.22; --spark-peak: 0.78; --spark-pop: 0.63;"></circle>
+        <circle class="spark" cx="47" cy="22" r=".95" style="--twinkle: 1072ms; --delay: -256ms; --jitter-x: 1.93px; --jitter-y: 1.83px; --spark-scale: 0.91; --spark-rest: 0.08; --spark-mid: 0.34; --spark-peak: 0.89; --spark-pop: 0.70;"></circle>
+        <circle class="spark" cx="60" cy="-6" r=".8" style="--twinkle: 1099ms; --delay: -131ms; --jitter-x: 3.93px; --jitter-y: 1.09px; --spark-scale: 1.04; --spark-rest: 0.16; --spark-mid: 0.21; --spark-peak: 0.66; --spark-pop: 0.63;"></circle>
+        <circle class="spark" cx="-7" cy="-52" r=".95" style="--twinkle: 1061ms; --delay: -295ms; --jitter-x: 0.99px; --jitter-y: -0.78px; --spark-scale: 0.72; --spark-rest: 0.14; --spark-mid: 0.46; --spark-peak: 0.84; --spark-pop: 0.91;"></circle>
+        <circle class="spark" cx="14" cy="48" r=".85" style="--twinkle: 1336ms; --delay: -178ms; --jitter-x: -0.79px; --jitter-y: 1.85px; --spark-scale: 0.94; --spark-rest: 0.10; --spark-mid: 0.25; --spark-peak: 0.98; --spark-pop: 0.60;"></circle>
+        <circle class="spark" cx="42" cy="-45" r=".75" style="--twinkle: 1296ms; --delay: -16ms; --jitter-x: 1.51px; --jitter-y: -2.75px; --spark-scale: 1.18; --spark-rest: 0.07; --spark-mid: 0.28; --spark-peak: 0.76; --spark-pop: 0.98;"></circle>
+        <circle class="spark" cx="57" cy="34" r=".82" style="--twinkle: 1332ms; --delay: -57ms; --jitter-x: 2.26px; --jitter-y: -0.36px; --spark-scale: 0.76; --spark-rest: 0.12; --spark-mid: 0.44; --spark-peak: 0.72; --spark-pop: 0.90;"></circle>
+        <circle class="spark" cx="-37" cy="53" r=".78" style="--twinkle: 944ms; --delay: -137ms; --jitter-x: 2.43px; --jitter-y: -0.56px; --spark-scale: 0.85; --spark-rest: 0.14; --spark-mid: 0.21; --spark-peak: 0.93; --spark-pop: 0.84;"></circle>
+        <path class="spark" d="M-13 -44 L-9 -34 L-19 -37 Z" opacity=".7" style="--twinkle: 1601ms; --delay: -281ms; --jitter-x: 3.77px; --jitter-y: 1.34px; --spark-scale: 1.15; --spark-rest: 0.08; --spark-mid: 0.26; --spark-peak: 0.81; --spark-pop: 0.70;"></path>
+        <path class="spark" d="M36 -2 L48 1 L36 5 Z" opacity=".72" style="--twinkle: 1463ms; --delay: -152ms; --jitter-x: -1.19px; --jitter-y: -0.11px; --spark-scale: 0.76; --spark-rest: 0.17; --spark-mid: 0.47; --spark-peak: 0.68; --spark-pop: 0.88;"></path>
+        <path class="spark-line" d="M-54 -28 L-43 -22" style="--twinkle: 953ms; --delay: -306ms; --jitter-x: 0.84px; --jitter-y: -1.20px; --spark-scale: 0.96; --spark-rest: 0.09; --spark-mid: 0.38; --spark-peak: 0.63; --spark-pop: 0.54;"></path>
+        <path class="spark-line" d="M-42 35 L-31 27" style="--twinkle: 1225ms; --delay: -190ms; --jitter-x: 1.07px; --jitter-y: 0.35px; --spark-scale: 0.86; --spark-rest: 0.17; --spark-mid: 0.29; --spark-peak: 0.90; --spark-pop: 0.57;"></path>
+        <path class="spark-line" d="M19 -35 L29 -45" style="--twinkle: 717ms; --delay: -244ms; --jitter-x: -1.39px; --jitter-y: 0.56px; --spark-scale: 0.89; --spark-rest: 0.12; --spark-mid: 0.42; --spark-peak: 0.98; --spark-pop: 0.52;"></path>
+        <path class="spark-line" d="M31 31 L43 39" style="--twinkle: 858ms; --delay: -222ms; --jitter-x: 3.05px; --jitter-y: -1.22px; --spark-scale: 1.17; --spark-rest: 0.07; --spark-mid: 0.22; --spark-peak: 0.80; --spark-pop: 0.70;"></path>
+      </g>
+    </g>
+
+    <g class="photon-orb bottom">
+      <animateMotion dur="7s" begin="1.8s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;0.42;1" calcMode="spline" keySplines=".36 0 .18 1;0 0 1 1">
+        <mpath href="#photonBottomPath"></mpath>
+      </animateMotion>
+      <g class="photon-shape">
+        <g class="photon-tail-cloud">
+          <circle class="tail-spark glow" cx="-114" cy="-8" r="4.1" style="--twinkle: 2259ms; --delay: -194ms; --jitter-x: 0.07px; --jitter-y: 0.83px; --spark-scale: 1.33; --tail-rest: 0.16; --tail-mid: 0.42; --tail-peak: 0.85; --tail-pop: 0.89;"></circle>
+          <circle class="tail-spark" cx="-102" cy="-28" r="2.05" style="--twinkle: 1023ms; --delay: -55ms; --jitter-x: 2.08px; --jitter-y: 4.77px; --spark-scale: 0.73; --tail-rest: 0.15; --tail-mid: 0.29; --tail-peak: 0.68; --tail-pop: 0.91;"></circle>
+          <circle class="tail-spark" cx="-96" cy="15" r="2.7" style="--twinkle: 1258ms; --delay: -385ms; --jitter-x: -3.71px; --jitter-y: 3.62px; --spark-scale: 1.35; --tail-rest: 0.26; --tail-mid: 0.36; --tail-peak: 0.71; --tail-pop: 0.60;"></circle>
+          <circle class="tail-spark" cx="-83" cy="-21" r="1.35" style="--twinkle: 1600ms; --delay: -54ms; --jitter-x: 3.39px; --jitter-y: -3.81px; --spark-scale: 1.15; --tail-rest: 0.16; --tail-mid: 0.51; --tail-peak: 0.94; --tail-pop: 0.86;"></circle>
+          <circle class="tail-spark glow" cx="-77" cy="-2" r="3.4" style="--twinkle: 1983ms; --delay: -519ms; --jitter-x: 2.61px; --jitter-y: -1.82px; --spark-scale: 1.06; --tail-rest: 0.13; --tail-mid: 0.40; --tail-peak: 0.91; --tail-pop: 0.57;"></circle>
+          <circle class="tail-spark" cx="-70" cy="24" r="1.25" style="--twinkle: 1421ms; --delay: -355ms; --jitter-x: -3.06px; --jitter-y: -4.97px; --spark-scale: 1.40; --tail-rest: 0.18; --tail-mid: 0.32; --tail-peak: 0.81; --tail-pop: 0.92;"></circle>
+          <circle class="tail-spark" cx="-62" cy="-31" r="1.18" style="--twinkle: 1887ms; --delay: -567ms; --jitter-x: -2.47px; --jitter-y: -5.79px; --spark-scale: 1.37; --tail-rest: 0.25; --tail-mid: 0.38; --tail-peak: 0.88; --tail-pop: 0.89;"></circle>
+          <circle class="tail-spark glow" cx="-54" cy="-12" r="2.7" style="--twinkle: 2069ms; --delay: -508ms; --jitter-x: 5.96px; --jitter-y: -0.46px; --spark-scale: 1.16; --tail-rest: 0.09; --tail-mid: 0.39; --tail-peak: 0.79; --tail-pop: 0.76;"></circle>
+          <circle class="tail-spark" cx="-47" cy="11" r="1.8" style="--twinkle: 2320ms; --delay: -2ms; --jitter-x: -6.12px; --jitter-y: -6.87px; --spark-scale: 1.36; --tail-rest: 0.19; --tail-mid: 0.36; --tail-peak: 0.66; --tail-pop: 0.62;"></circle>
+          <circle class="tail-spark" cx="-38" cy="-24" r="1.08" style="--twinkle: 1507ms; --delay: -8ms; --jitter-x: -4.94px; --jitter-y: -4.13px; --spark-scale: 1.13; --tail-rest: 0.24; --tail-mid: 0.24; --tail-peak: 0.80; --tail-pop: 0.88;"></circle>
+          <circle class="tail-spark glow" cx="-30" cy="-6" r="1.75" style="--twinkle: 1755ms; --delay: -574ms; --jitter-x: -5.93px; --jitter-y: 5.94px; --spark-scale: 1.22; --tail-rest: 0.28; --tail-mid: 0.38; --tail-peak: 0.81; --tail-pop: 0.62;"></circle>
+          <circle class="tail-spark" cx="-23" cy="16" r="1" style="--twinkle: 1918ms; --delay: -61ms; --jitter-x: 4.76px; --jitter-y: -4.99px; --spark-scale: 1.16; --tail-rest: 0.22; --tail-mid: 0.35; --tail-peak: 0.95; --tail-pop: 0.83;"></circle>
+          <circle class="tail-spark" cx="-17" cy="-18" r=".9" style="--twinkle: 2058ms; --delay: -556ms; --jitter-x: 3.09px; --jitter-y: -1.46px; --spark-scale: 1.21; --tail-rest: 0.12; --tail-mid: 0.44; --tail-peak: 0.82; --tail-pop: 0.95;"></circle>
+          <path class="spark-line" d="M-116 -24 L-105 -18" style="--twinkle: 921ms; --delay: -250ms; --jitter-x: -3.89px; --jitter-y: -0.77px; --spark-scale: 0.84; --spark-rest: 0.08; --spark-mid: 0.47; --spark-peak: 0.64; --spark-pop: 0.61;"></path>
+          <path class="spark-line" d="M-88 29 L-75 20" style="--twinkle: 864ms; --delay: -153ms; --jitter-x: 2.05px; --jitter-y: -0.48px; --spark-scale: 1.19; --spark-rest: 0.15; --spark-mid: 0.29; --spark-peak: 0.90; --spark-pop: 0.86;"></path>
+          <path class="spark-line" d="M-58 -38 L-48 -29" style="--twinkle: 1401ms; --delay: -156ms; --jitter-x: 2.03px; --jitter-y: -0.38px; --spark-scale: 0.85; --spark-rest: 0.21; --spark-mid: 0.43; --spark-peak: 0.76; --spark-pop: 0.69;"></path>
+        </g>
+        <circle class="photon-halo" cx="0" cy="0" r="32"></circle>
+        <circle class="photon-halo" cx="0" cy="0" r="18" opacity=".82"></circle>
+        <circle class="photon-core" cx="0" cy="0" r="7"></circle>
+        <circle class="spark" cx="-48" cy="-18" r="2" style="--twinkle: 1699ms; --delay: -559ms; --jitter-x: -2.37px; --jitter-y: -3.99px; --spark-scale: 0.84; --spark-rest: 0.14; --spark-mid: 0.40; --spark-peak: 0.72; --spark-pop: 0.49;"></circle>
+        <circle class="spark" cx="-32" cy="23" r="1.9" style="--twinkle: 1297ms; --delay: -425ms; --jitter-x: -0.94px; --jitter-y: -1.64px; --spark-scale: 1.03; --spark-rest: 0.11; --spark-mid: 0.35; --spark-peak: 0.57; --spark-pop: 0.86;"></circle>
+        <circle class="spark" cx="-16" cy="-32" r="1.4" style="--twinkle: 1195ms; --delay: -54ms; --jitter-x: -2.35px; --jitter-y: -3.20px; --spark-scale: 1.19; --spark-rest: 0.11; --spark-mid: 0.37; --spark-peak: 0.71; --spark-pop: 0.77;"></circle>
+        <circle class="spark" cx="17" cy="-16" r="1.6" style="--twinkle: 770ms; --delay: -149ms; --jitter-x: -0.42px; --jitter-y: -0.60px; --spark-scale: 1.00; --spark-rest: 0.15; --spark-mid: 0.50; --spark-peak: 0.70; --spark-pop: 0.65;"></circle>
+        <circle class="spark" cx="28" cy="17" r="1.35" style="--twinkle: 1070ms; --delay: -360ms; --jitter-x: 4.00px; --jitter-y: 1.63px; --spark-scale: 0.79; --spark-rest: 0.09; --spark-mid: 0.38; --spark-peak: 0.66; --spark-pop: 0.79;"></circle>
+        <circle class="spark" cx="-63" cy="5" r="1.1" style="--twinkle: 1629ms; --delay: -350ms; --jitter-x: 1.48px; --jitter-y: -1.19px; --spark-scale: 0.85; --spark-rest: 0.13; --spark-mid: 0.38; --spark-peak: 0.99; --spark-pop: 0.84;"></circle>
+        <circle class="spark" cx="4" cy="33" r="1.2" style="--twinkle: 1442ms; --delay: -119ms; --jitter-x: 3.44px; --jitter-y: 0.71px; --spark-scale: 1.05; --spark-rest: 0.17; --spark-mid: 0.23; --spark-peak: 0.77; --spark-pop: 0.67;"></circle>
+        <circle class="spark" cx="-80" cy="-12" r=".9" style="--twinkle: 1751ms; --delay: -87ms; --jitter-x: -0.89px; --jitter-y: -0.36px; --spark-scale: 0.85; --spark-rest: 0.16; --spark-mid: 0.23; --spark-peak: 0.74; --spark-pop: 0.75;"></circle>
+        <circle class="spark" cx="-68" cy="29" r="1" style="--twinkle: 983ms; --delay: -40ms; --jitter-x: 1.14px; --jitter-y: 1.82px; --spark-scale: 1.01; --spark-rest: 0.10; --spark-mid: 0.41; --spark-peak: 0.59; --spark-pop: 0.80;"></circle>
+        <circle class="spark" cx="-54" cy="-39" r=".85" style="--twinkle: 668ms; --delay: -155ms; --jitter-x: -3.34px; --jitter-y: 1.88px; --spark-scale: 0.93; --spark-rest: 0.16; --spark-mid: 0.39; --spark-peak: 0.82; --spark-pop: 0.63;"></circle>
+        <circle class="spark" cx="-26" cy="44" r=".9" style="--twinkle: 663ms; --delay: -34ms; --jitter-x: -2.27px; --jitter-y: 2.85px; --spark-scale: 1.16; --spark-rest: 0.07; --spark-mid: 0.35; --spark-peak: 0.98; --spark-pop: 0.93;"></circle>
+        <circle class="spark" cx="34" cy="-30" r="1.05" style="--twinkle: 1772ms; --delay: -119ms; --jitter-x: 1.89px; --jitter-y: 3.91px; --spark-scale: 1.03; --spark-rest: 0.06; --spark-mid: 0.50; --spark-peak: 0.84; --spark-pop: 0.72;"></circle>
+        <circle class="spark" cx="48" cy="22" r=".95" style="--twinkle: 588ms; --delay: -31ms; --jitter-x: 3.58px; --jitter-y: -2.42px; --spark-scale: 1.02; --spark-rest: 0.17; --spark-mid: 0.44; --spark-peak: 0.80; --spark-pop: 0.96;"></circle>
+        <circle class="spark" cx="61" cy="-6" r=".8" style="--twinkle: 1339ms; --delay: -12ms; --jitter-x: 3.36px; --jitter-y: 3.69px; --spark-scale: 1.14; --spark-rest: 0.12; --spark-mid: 0.35; --spark-peak: 0.78; --spark-pop: 0.51;"></circle>
+        <circle class="spark" cx="-7" cy="-52" r=".95" style="--twinkle: 1143ms; --delay: -90ms; --jitter-x: -1.75px; --jitter-y: -0.94px; --spark-scale: 0.72; --spark-rest: 0.07; --spark-mid: 0.42; --spark-peak: 0.96; --spark-pop: 0.61;"></circle>
+        <circle class="spark" cx="14" cy="49" r=".85" style="--twinkle: 1706ms; --delay: -147ms; --jitter-x: -2.69px; --jitter-y: -0.88px; --spark-scale: 1.11; --spark-rest: 0.07; --spark-mid: 0.29; --spark-peak: 0.99; --spark-pop: 0.58;"></circle>
+        <circle class="spark" cx="42" cy="-45" r=".75" style="--twinkle: 970ms; --delay: -220ms; --jitter-x: -0.22px; --jitter-y: -0.59px; --spark-scale: 0.78; --spark-rest: 0.13; --spark-mid: 0.44; --spark-peak: 0.78; --spark-pop: 0.71;"></circle>
+        <circle class="spark" cx="58" cy="34" r=".82" style="--twinkle: 1473ms; --delay: -251ms; --jitter-x: -2.69px; --jitter-y: -1.92px; --spark-scale: 1.11; --spark-rest: 0.13; --spark-mid: 0.26; --spark-peak: 0.72; --spark-pop: 0.54;"></circle>
+        <circle class="spark" cx="-37" cy="53" r=".78" style="--twinkle: 668ms; --delay: -51ms; --jitter-x: 2.56px; --jitter-y: 1.83px; --spark-scale: 1.06; --spark-rest: 0.13; --spark-mid: 0.49; --spark-peak: 0.79; --spark-pop: 0.58;"></circle>
+        <path class="spark" d="M-10 -45 L-7 -34 L-18 -37 Z" opacity=".7" style="--twinkle: 1647ms; --delay: -324ms; --jitter-x: 1.97px; --jitter-y: 2.10px; --spark-scale: 1.22; --spark-rest: 0.15; --spark-mid: 0.34; --spark-peak: 0.98; --spark-pop: 0.71;"></path>
+        <path class="spark" d="M36 -2 L49 1 L36 5 Z" opacity=".72" style="--twinkle: 705ms; --delay: -198ms; --jitter-x: 1.89px; --jitter-y: 2.89px; --spark-scale: 0.75; --spark-rest: 0.08; --spark-mid: 0.38; --spark-peak: 0.85; --spark-pop: 0.68;"></path>
+        <path class="spark-line" d="M-55 -28 L-43 -22" style="--twinkle: 1022ms; --delay: -186ms; --jitter-x: -2.68px; --jitter-y: 3.24px; --spark-scale: 0.88; --spark-rest: 0.19; --spark-mid: 0.32; --spark-peak: 0.62; --spark-pop: 0.62;"></path>
+        <path class="spark-line" d="M-42 35 L-31 27" style="--twinkle: 1622ms; --delay: -130ms; --jitter-x: -3.52px; --jitter-y: -0.89px; --spark-scale: 1.20; --spark-rest: 0.13; --spark-mid: 0.36; --spark-peak: 0.75; --spark-pop: 0.61;"></path>
+        <path class="spark-line" d="M18 -35 L29 -45" style="--twinkle: 1113ms; --delay: -6ms; --jitter-x: 0.82px; --jitter-y: -3.61px; --spark-scale: 1.16; --spark-rest: 0.19; --spark-mid: 0.33; --spark-peak: 0.65; --spark-pop: 0.96;"></path>
+        <path class="spark-line" d="M31 31 L44 39" style="--twinkle: 1225ms; --delay: -371ms; --jitter-x: -0.63px; --jitter-y: 0.05px; --spark-scale: 0.74; --spark-rest: 0.09; --spark-mid: 0.22; --spark-peak: 0.79; --spark-pop: 0.90;"></path>
+      </g>
+    </g>
+
+    <g id="p2oe-mark" class="mark is-power">
+      <g id="p2oe-p">
+        <path class="main white-main" d="M61 500 V417 H233 Q273 417 273 377 Q273 337 233 337 H61"></path>
+      </g>
+      <path id="p2oe-two" class="main blue-main is-power" d="M350 337 H519 Q560 337 560 377 Q560 417 519 417 H410 Q350 417 350 477 V500 H562"></path>
+      <g id="p2oe-o">
+        <rect class="main white-main" x="639.695" y="337" width="230.352" height="162" rx="74"></rect>
+      </g>
+      <g id="p2oe-e">
+        <path class="e-top-segment" d="M940 320 H978.85 V354 H940 A17 17 0 0 1 940 320 Z"></path>
+        <rect class="e-top-segment" x="1022.95" y="320" width="44.1" height="34"></rect>
+        <path class="e-top-segment" d="M1111.15 320 H1150 A17 17 0 0 1 1150 354 H1111.15 Z"></path>
+        <path class="main white-main" d="M940 417 H1150 M940 500 H1150"></path>
+      </g>
+    </g>
+
+    <g id="waterSplash" class="water-splash" transform="translate(458.2 483.0) rotate(0.2)">
+      <path class="ripple" d="M-84 0 Q0 -32 84 0 Q0 32 -84 0 Z"></path>
+      <path class="ripple" d="M-48 10 Q0 -8 48 10"></path>
+      <circle class="drop-a" cx="-16" cy="-6" r="7.2"></circle>
+      <circle class="drop-b" cx="14" cy="-8" r="8.4"></circle>
+      <circle class="drop-c" cx="-34" cy="12" r="5.6"></circle>
+      <circle class="drop-d" cx="34" cy="16" r="6.4"></circle>
+    </g>
+
+
+
+
+
+    <g id="easterStickman" class="stickman swimming" transform="translate(459.8 358.2) rotate(179.6) scale(0.86)" style="opacity: 0.68;">
+      <g class="body-wrap">
+        <circle class="head" cx="0" cy="-36" r="12"></circle>
+        <line class="body" x1="0" y1="-22" x2="0" y2="18"></line>
+        <g class="shoulders">
+          <g class="arm-a" transform="translate(0 -10)">
+            <g class="upper">
+              <line x1="0" y1="0" x2="16" y2="8"></line>
+              <g transform="translate(16 8)">
+                <g class="lower">
+                  <line x1="0" y1="0" x2="16" y2="8"></line>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="arm-b" transform="translate(0 -10) scale(-1 1)">
+            <g class="upper">
+              <line x1="0" y1="0" x2="16" y2="8"></line>
+              <g transform="translate(16 8)">
+                <g class="lower">
+                  <line x1="0" y1="0" x2="16" y2="8"></line>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g class="hips">
+          <g class="leg-a" transform="translate(0 18)">
+            <g class="upper">
+              <line x1="0" y1="0" x2="12" y2="16"></line>
+              <g transform="translate(12 16)">
+                <g class="lower">
+                  <line x1="0" y1="0" x2="10" y2="18"></line>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="leg-b" transform="translate(0 18) scale(-1 1)">
+            <g class="upper">
+              <line x1="0" y1="0" x2="12" y2="16"></line>
+              <g transform="translate(12 16)">
+                <g class="lower">
+                  <line x1="0" y1="0" x2="10" y2="18"></line>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <path id="activationPhotonPath" class="photon-path" pathLength="100" d="M487.8 634.1 Q501.2 615.4 486.6 597.7"></path><g id="activationPhoton" class="activation-photon" style="--impact-scale: 0.20;">
+  <g class="photon-tail">
+    <ellipse class="tail" cx="0" cy="0" rx="7.6" ry="2.4" transform="translate(488.2 603.6) rotate(-92.0)"></ellipse>
+    <circle class="violet particle particle-k" cx="486.3" cy="602.1" r="2.2"></circle>
+    <circle class="cool particle particle-i" cx="489.1" cy="600.6" r="2.5"></circle>
+    <circle class="violet particle particle-f" cx="488.0" cy="605.2" r="2"></circle>
+  </g>
+  <g class="photon-body">
+    <circle class="halo-wide" cx="486.6" cy="597.7" r="9.6"></circle>
+    <circle class="halo-tight" cx="486.6" cy="597.7" r="6.0"></circle>
+    <circle class="core" cx="486.6" cy="597.7" r="2.6"></circle>
+  </g>
+  <circle class="bright particle particle-a" cx="485.6" cy="598.9" r="3"></circle>
+  <circle class="cool particle particle-b" cx="484.9" cy="596.5" r="2.6"></circle>
+  <circle class="violet particle particle-c" cx="486.9" cy="595.5" r="2.3"></circle>
+  <circle class="cool particle particle-d" cx="488.5" cy="596.8" r="2.6"></circle>
+  <circle class="bright particle particle-e" cx="488.2" cy="599.2" r="2.2"></circle>
+  <circle class="violet particle particle-g" cx="483.8" cy="598.2" r="2"></circle>
+  <circle class="cool particle particle-h" cx="486.3" cy="594.7" r="2.1"></circle>
+  <circle class="bright particle particle-j" cx="489.5" cy="597.2" r="1.8"></circle>
+  <circle class="violet particle particle-l" cx="484.3" cy="595.2" r="1.7"></circle>
+</g></svg>

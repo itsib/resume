@@ -58,6 +58,15 @@ main {
   }
 }
 
+.section-text {
+  color: var(--color-text-secondary);
+  white-space: pre-line;
+
+  b {
+    color: var(--color-text-primary);
+  }
+}
+
 #header {
   padding: 3rem 0;
   position: relative;
